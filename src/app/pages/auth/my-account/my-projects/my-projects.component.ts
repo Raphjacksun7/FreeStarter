@@ -8,7 +8,7 @@ import { ProjectsService, AuthService } from 'src/app/providers';
 })
 export class MyProjectsComponent implements OnInit {
 
-  private projects: any;
+  public projects: any;
 
   constructor(
     private auth: AuthService,

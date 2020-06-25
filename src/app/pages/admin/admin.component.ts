@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/providers';
 })
 export class AdminComponent implements OnInit {
 
-  private fullname: string;
+  public fullname: string;
   constructor(
     private auth: AuthService,
   ) { }

@@ -10,13 +10,13 @@ import { ProjectsService } from '../../../providers';
 })
 export class ContributeComponent implements OnInit {
 
-  private rewards: Array<any> = []
-  private mySubscription: any;
-  private totalAmount: number;
-  private projectDetails: Array<any> = [];
-  private idReward:number;
-  private isVisible = false;
-  private isOkLoading = false;
+  public rewards: Array<any> = []
+  public mySubscription: any;
+  public totalAmount: number;
+  public projectDetails: Array<any> = [];
+  public idReward:number;
+  public isVisible = false;
+  public isOkLoading = false;
 
 
 

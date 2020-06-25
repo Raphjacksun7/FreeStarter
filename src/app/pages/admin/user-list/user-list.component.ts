@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UserListComponent implements OnInit {
 
-  private users: any = [];
+  public users: any = [];
   constructor(
     private auth: AuthService ,
     private modalService: NzModalService,

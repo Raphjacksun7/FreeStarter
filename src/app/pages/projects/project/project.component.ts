@@ -9,7 +9,7 @@ import { ProjectsService } from '../../../providers';
 })
 export class ProjectComponent implements OnInit {
 
-  private projectDetails: any = [];
+  public projectDetails: any = [];
   constructor(
      private projectService: ProjectsService ,
      private activeRoute: ActivatedRoute ,

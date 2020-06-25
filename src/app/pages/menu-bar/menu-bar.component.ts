@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MenuBarComponent implements OnInit {
 
-  private fullname: string;
+  public fullname: string;
   constructor(
     private auth: AuthService,
     private router: Router

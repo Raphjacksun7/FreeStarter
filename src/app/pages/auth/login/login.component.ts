@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  credentials : User = {
+  public credentials : User = {
     name:'',
     email:'',
     password:''

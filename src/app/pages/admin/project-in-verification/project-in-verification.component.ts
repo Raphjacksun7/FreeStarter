@@ -10,7 +10,7 @@ import { ProjectsService, AuthService } from 'src/app/providers';
   export class ProjectInVerificationComponent implements OnInit {
   
   
-    private projects: Array<any> = []
+    public projects: Array<any> = []
   
     constructor(
       private projectService: ProjectsService ,

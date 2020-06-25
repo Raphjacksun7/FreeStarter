@@ -9,7 +9,7 @@ import { ProjectsService, AuthService } from 'src/app/providers';
 })
 export class ProjectInProgressComponent implements OnInit {
 
-  private projects: Array<any> = []
+  public projects: Array<any> = []
 
   constructor(
     private projectService: ProjectsService ,

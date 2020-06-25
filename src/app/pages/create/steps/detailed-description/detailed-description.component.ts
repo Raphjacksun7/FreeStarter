@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DetailedDescriptionComponent implements OnInit {
 
   public Editor = DecoupledEditor;
-  private projectDetails: ProjectDetails = {
+  public projectDetails: ProjectDetails = {
     projects_id: '',
     localisation: '',
     image: '',
@@ -23,9 +23,9 @@ export class DetailedDescriptionComponent implements OnInit {
     target: '',
   }
 
-  private imageError: string = '';
-  private imageName: string = '';
-  private project: any;
+  public imageError: string = '';
+  public imageName: string = '';
+  public project: any;
 
   constructor(
     private projectService: ProjectsService ,

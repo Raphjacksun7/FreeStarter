@@ -10,7 +10,7 @@ import { User } from '../../../interfaces/user-details';
 })
 export class RegisterComponent implements OnInit {
 
-  credentials : User = {
+  public credentials : User = {
     name:'',
     email:'',
     password:''

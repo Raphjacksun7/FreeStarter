@@ -12,9 +12,9 @@ export class ViewByOwnerComponent implements OnInit {
 
   videoOnFrame: any;
   videoUrl = "https://www.youtube.com/watch?v=izGDTD5IRys";
-  private details: any = [];
+  public details: any = [];
   public static rewards: Array<any> = [];
-  private image: any;
+  public image: any;
 
   constructor(
      private embedService: EmbedVideoService,

@@ -10,10 +10,10 @@ import { NzModalService } from 'ng-zorro-antd';
 })
 export class ShowProjectDetailsComponent implements OnInit {
 
-  private details: any = [];
-  private image: string;
-  private loading: boolean = false;
-  isVisible = false;
+  public details: any = [];
+  public image: string;
+  public loading: boolean = false;
+  public isVisible = false;
 
   constructor(
     private projectService: ProjectsService ,

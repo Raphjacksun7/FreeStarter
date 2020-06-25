@@ -9,7 +9,7 @@ import { ProjectsService, UploadsService, AuthService } from '../../providers';
 })
 export class DiscoverComponent implements OnInit {
 
-  private projects: Array<any> = []
+  public projects: Array<any> = []
 
   constructor(
     private projectService: ProjectsService ,

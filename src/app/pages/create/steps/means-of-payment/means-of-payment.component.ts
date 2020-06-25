@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MeansOfPaymentComponent implements OnInit {
 
-  private bankStatus :BankStatus = {
+  public bankStatus :BankStatus = {
     projects_id: '',
     realName: '',
     nameOfBank: '',
@@ -20,12 +20,12 @@ export class MeansOfPaymentComponent implements OnInit {
     statusProof: null,
   };
 
-  private checkValue = true;
-  private requireShow: any;
-  private zipName: string;
-  private imageError: string;
-  private idProject: any;
-  private project: any;
+  public checkValue = true;
+  public requireShow: any;
+  public zipName: string;
+  public imageError: string;
+  public idProject: any;
+  public project: any;
 
   constructor(
     private projectService: ProjectsService ,

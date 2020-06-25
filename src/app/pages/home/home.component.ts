@@ -10,14 +10,13 @@ import { ProjectsService, UploadsService, AuthService } from '../../providers';
 })
 export class HomeComponent implements OnInit {
   
-  private projects: Array<any> = []
+  public projects: Array<any> = []
 
 
   constructor(
     private projectService: ProjectsService ,
     private uploadService: UploadsService ,
-    private auth: AuthService,
-    private router: Router
+    private auth: AuthService
   ) { }
 
   ngOnInit() {

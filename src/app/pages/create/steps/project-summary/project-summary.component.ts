@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProjectSummaryComponent implements OnInit {
 
-  private communities : Communities = {
+  public communities : Communities = {
     projects_id:'',
     website: '',
     facebook:'',
@@ -19,7 +19,7 @@ export class ProjectSummaryComponent implements OnInit {
     youtube: '',
   }
 
-  private project : any;
+  public project : any;
 
   constructor(
     private projectService: ProjectsService ,

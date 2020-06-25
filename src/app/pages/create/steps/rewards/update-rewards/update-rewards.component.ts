@@ -12,8 +12,8 @@ import { CampaignDetailsComponent } from '../../campaign-details/campaign-detail
 })
 export class UpdateRewardsComponent implements OnInit {
 
-private rewards :any;
-private idReward: any;
+  public rewards :any;
+  public idReward: any;
 
 
   public Editor = DecoupledEditor;

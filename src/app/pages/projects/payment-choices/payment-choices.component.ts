@@ -12,9 +12,9 @@ import { NzModalService } from 'ng-zorro-antd';
 })
 export class PaymentChoicesComponent implements OnInit {
 
-  private reward: any;
-  private projectDetails: any;
-  private contributors: Contributors = {
+  public reward: any;
+  public projectDetails: any;
+  public contributors: Contributors = {
     projects_id: '',
     user_id: '',
     rewards_id: ''

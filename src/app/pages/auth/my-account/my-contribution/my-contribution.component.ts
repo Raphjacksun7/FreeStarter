@@ -8,7 +8,7 @@ import { AuthService, ProjectsService } from 'src/app/providers';
 })
 export class MyContributionComponent implements OnInit {
 
-  private contributions: Array<any> = [];
+  public contributions: Array<any> = [];
 
   constructor(
     private auth: AuthService,

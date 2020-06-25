@@ -12,7 +12,7 @@ import { CampaignDetailsComponent } from '../../campaign-details/campaign-detail
 })
 export class AddRewardComponent implements OnInit {
 
-  rewards : Rewards = {
+  public rewards : Rewards = {
     projects_id: '',
     title: '',
     amount: '',
@@ -21,7 +21,7 @@ export class AddRewardComponent implements OnInit {
     shipDate: '',
     haveToShip: ''
 }
-private idProject: any;
+public idProject: any;
 
 
   public Editor = DecoupledEditor;

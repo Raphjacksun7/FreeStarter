@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CampaignDetailsComponent implements OnInit {
   
-  project : Projects = {
+  public project : Projects = {
     user_id: '',
     title: '',
     category: '',

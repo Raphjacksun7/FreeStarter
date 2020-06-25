@@ -10,9 +10,9 @@ import { CampaignDetailsComponent } from '../campaign-details/campaign-details.c
   styleUrls: ['./rewards.component.scss']
 })
 export class RewardsComponent implements OnInit {
-  private rewards: any = [];
-  private idProject: any;
-  private project: any;
+  public rewards: any = [];
+  public idProject: any;
+  public project: any;
 
   constructor(
     private projectService: ProjectsService ,

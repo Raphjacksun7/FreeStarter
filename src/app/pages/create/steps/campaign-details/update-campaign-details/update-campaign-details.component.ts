@@ -11,8 +11,8 @@ import { id_ID } from 'ng-zorro-antd';
 })
 export class UpdateCampaignDetailsComponent implements OnInit {
   
-  private project: any;
-  private idProject;
+  public project: any;
+  public idProject;
 
 
   constructor(
