@@ -1,0 +1,138 @@
+<nz-layout>
+    <nz-affix class="text-center">
+        <app-menu-bar></app-menu-bar>
+    </nz-affix>
+        <nz-content class="bg-white">
+        <section nz-row  class="pt-5">
+            <div class="container01">
+                <div class="row pt-3" style="padding-left: 40px; padding-right: 40px;">
+                    <div class="col-lg-7">
+                        <div class="marger-static2" style="text-align: initial">
+                            <div  class="">
+                                <h3 nz-title class="bigTitleStyle">
+                                    Mon projet
+                                </h3>
+                                <div style="margin-top: 1.25rem; margin-bottom: 2.5rem;">
+                                    <span class="horizontal-stroke"></span>
+                                </div>
+                                <div class="f-Grid col-12" style="padding: 0px;">
+                                    <div class="marger-static2">
+                                        <p class="f-Paragraph f-Paragraph--primary f-Paragraph--withoutMargin">
+                                            Editez la présentation de votre projet, gérez la mise en page et construisez vos contreparties.
+                                        </p>  
+                                    </div>
+                                    <div class="col-10" style="padding: 0px;">
+                                        <form>
+                                            <div class="marger-static2">
+                                                <div class="marger-static">                                                
+                                                    <nav class="vertical-stepper">
+                                                        <ul role="tablist">
+                                                            <li>
+                                                                <a>
+                                                                    <span class="status">
+                                                                        <i nz-icon nzType="check" nzTheme="outline" style="color:white;"></i>
+                                                                    </span>
+                                                                    <div class="step">
+                                                                        <p class="content">Faisons connaissance</p>
+                                                                        <p class="link" (click)="goToUpdateProject()">
+                                                                            <span>Modifier</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a>
+                                                                    <span class="status">
+                                                                        <i nz-icon nzType="check" nzTheme="outline" style="color:white;"></i>
+                                                                    </span>
+                                                                    <div class="step">
+                                                                        <p class="content"> Communauté </p>
+                                                                        <p class="link" (click)="goToUpdateCommunities()">
+                                                                            <span>Modifier</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a>
+                                                                    <span class="status">
+                                                                        <i nz-icon nzType="check" nzTheme="outline" style="color:white;"></i>
+                                                                    </span>
+                                                                    <div class="step">
+                                                                        <p class="content"> Présentation du projet </p>
+                                                                        <p class="link" (click)="goToUpdateProjectDetails()">
+                                                                            <span>Modifier</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a>
+                                                                    <span class="status">
+                                                                        <i nz-icon nzType="check" nzTheme="outline" style="color:white;"></i>
+                                                                    </span>
+                                                                    <div class="step">
+                                                                        <p class="content"> Contreparties </p>
+                                                                        <p class="link" (click)="goToUpdateRewards()">
+                                                                            <span>Modifier</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a>
+                                                                    <span class="status">
+                                                                        <i nz-icon nzType="check" nzTheme="outline" style="color:white;"></i>
+                                                                    </span>
+                                                                    <div class="step">
+                                                                        <p class="content"> Statut et infos bancaires </p>
+                                                                        <p class="link" (click)="goToUpdateProjectBank()">
+                                                                            <span>Modifier</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div> 
+                    <div class=" offset-lg-1 col-lg-4 can-hidden-lg f-Side">
+                        <div class=" f-Side-asideContent" style="padding: 2em;">
+                            <!-- <div class="f-InformationBox">
+                                <div class="f-InformationBox-container">
+                                    <div style="margin-bottom: 0.625rem;">
+                                        <p class="f-Title f-Title--quaternary">Vous hésitez ?</p>
+                                    </div>
+                                    <div style="margin-bottom: 0.625rem;">
+                                        <p class="f-Paragraph f-Paragraph--quaternary">
+                                            Vous avez plusieurs titres en tête ? Vous ne savez pas quelle 
+                                            durée de collecte choisir ? Pas de panique !
+                                        </p>
+                                    </div>
+                                    <div style="margin-bottom: 0.625rem;">
+                                        <p class="f-Paragraph f-Paragraph--quaternary">
+                                            Vous pourrez modifier les infos clés de votre collecte et 
+                                            bénéficier des conseils d'un Coach par la suite.
+                                        </p>
+                                    </div>
+                                </div> 
+                            </div>  -->
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        </nz-content>
+        
+        <nz-footer>
+            <app-footer></app-footer>
+        </nz-footer>
+    </nz-layout>
+    

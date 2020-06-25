@@ -1,0 +1,153 @@
+<nz-layout>
+    <nz-affix class="text-center">
+        <app-menu-bar></app-menu-bar>
+    </nz-affix>
+    <nz-content class="bg-white">
+    <section nz-row  class="pt-5">
+        <div class="container01">
+            <div class="row pt-3" style="padding-left: 40px; padding-right: 40px;">
+                <div class="col-lg-7">
+                    <div class="marger-static2" style="text-align: initial">
+                        <div  class="">
+                            <h3 nz-title class="bigTitleStyle">
+                                Éditer votre contrepartie
+                            </h3>
+                            <div class="f-Grid col-12" style="padding: 0px;">
+                                <div class="col-10" style="padding: 0px;">
+                                    <form>
+                                        <div class="marger-static">
+                                            <h2 class="f-Title f-Title--quaternary">Montant et contenu de la contrepartie</h2>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="money">
+                                                        Montant
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input3" name="amount" [(ngModel)]="rewards.amount" nz-input placeholder="0 XOF" nzSize="large" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="titre">
+                                                        Titre de la contrepartie (optionnel)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="title" [(ngModel)]="rewards.title" nz-input placeholder="Ajoutez un titre à votre contrepartie (80 caractères max)" nzSize="large" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="titre">
+                                                        Description
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <ckeditor [editor]="Editor" name="description" [(ngModel)]="rewards.description" (ready)="onReady($event)"></ckeditor>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static">
+                                            <h2 class="f-Title f-Title--quaternary ">Livraison de votre contrepartie</h2>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="livraison">
+                                                        Estimer une date à laquelle le contributeur pourra recevoir ces contreparties (recommandé)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">
+                                                <nz-month-picker
+                                                    class="calendar"
+                                                    name="fd"
+                                                    name="shipDate" [(ngModel)]="rewards.shipDate"
+                                                    (ngModelChange)="onChangeDate($event)"
+                                                    nzPlaceHolder="Mois et Année">
+                                                </nz-month-picker>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="titre">
+                                                        Modalités de livraison et demande d'adresse
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <nz-radio-group name="haveToShip" [(ngModel)]="rewards.haveToShip">
+                                                        <label nz-radio nzValue="true">
+                                                            Je compte organiser une remise en main propre et je n'ai pas besoin de l'adresse de livraison du contributeur
+                                                        </label>
+                                                        <label nz-radio nzValue="false">
+                                                            Cette contrepartie est symbolique ou immatérielle, je n'ai pas besoin de l'adresse de livraison du contributeur
+                                                        </label>
+                                                    </nz-radio-group>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tabs-btn">
+                                            <ul  class="mb-3">
+                                                <li class="buttonStyle-default">
+                                                    <a>Retour </a>
+                                                </li>
+                                                <li (click)="updateProjectReward()" class="buttonStyle2">
+                                                    <a>Valider la contrepartie</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div> 
+                <div class=" offset-lg-1 col-lg-4 can-hidden-lg f-Side">
+                    <div class=" f-Side-asideContent" style="padding: 2em;">
+                        <div class="f-InformationBox">
+                            <div class="f-InformationBox-container">
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Title f-Title--quaternary">Vous hésitez ?</p>
+                                </div>
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Paragraph f-Paragraph--quaternary">
+                                        Vous avez plusieurs titres en tête ? Vous ne savez pas quelle 
+                                        durée de collecte choisir ? Pas de panique !
+                                    </p>
+                                </div>
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Paragraph f-Paragraph--quaternary">
+                                        Vous pourrez modifier les infos clés de votre collecte et 
+                                        bénéficier des conseils d'un Coach par la suite.
+                                    </p>
+                                </div>
+                            </div> 
+                        </div> 
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </nz-content>
+    
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>

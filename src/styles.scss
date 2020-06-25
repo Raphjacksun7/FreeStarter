@@ -1,0 +1,479 @@
+:host ::ng-deep {
+
+     // Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) 
+     @media screen and (max-width: 600px) {
+      .topnav a, .topnav-right {
+        float: none;
+        display: block;
+      }
+    
+      .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+    }
+
+    $break-small: 640px;
+    @media (min-width: $break-small)
+     { .marger-bottom {
+        margin-bottom: 5rem;
+    }
+    .f-Title {
+      font-size: 1.26562rem;
+      line-height: 1.2;
+  }}
+    
+    .marger-bottom {
+    margin-bottom: 3.125rem;
+    }
+
+    @media (min-width: $break-small)
+   { .container02 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }}
+
+  @media screen and (min-width: 1000px)
+  {.f-Row-content {
+    display: none;
+  } } 
+  @media (min-width: 640px){
+  .f-Title--senary {
+      font-size: 1.26562rem;
+      line-height: 1.2;
+  }}
+
+  @media (min-width: 640px){
+  .f-Title--secondary {
+    font-size: 2.88651rem;
+    line-height: 1.2;}
+}
+
+  @media (min-width: 640px){
+  .f-Paragraph--primary, .free-RichText, .free-RichText p {
+    font-size: 1.26562rem;
+    line-height: 1.6;
+}}
+
+@media (min-width: 640px){
+  .tiny-text-marger {
+      padding-left: 1.875rem;
+  }}
+
+  
+  @media (min-width: 640px){
+  .tiny-text-marger {
+      padding-left: 1.875rem;
+  }}
+
+  @media (min-width: 48rem){
+    .f-StyledTitleContainer {
+      padding: 0px 0.625rem;
+    }}
+ 
+}
+
+
+nz-layout{
+  background-color: white;
+}
+
+.layout-top {
+  margin-top: 2em;
+}
+
+.ant-menu-submenu-selected {
+  color: #14ac71;
+}
+
+.ant-menu-item-selected {
+  color: #14ac71;
+}
+
+.ant-menu-inline .ant-menu-item::after {
+  border-right: 3px solid #14ac71;
+}
+
+.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+  color: #14ac71;
+}
+
+/******************* Start the NavBar ***********************/ 
+ article, aside, details, figcaption, figure, footer, header, hgroup, img, main, menu, nav, section {
+  display: block;
+  }
+
+  h1, h2, h3, h4, h5, h6, li, ol, ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .f-Title--primary .f-Card {
+    transition: color .4s ease-in-out;
+  }
+
+  button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+  }
+
+ .bg-white {
+    background-color: white;
+  }
+     .container01 {
+       padding-left: 5%;
+       padding-right: 5%;
+       margin-left: auto;
+       margin-right: auto;
+       box-sizing: border-box;
+     }
+     .f-u-weight-regular {
+      //font-family: Maax,Helvetica,Arial,sans-serif;
+        font-weight: 600;
+    }
+   
+  .f-Title {
+      font-size: 1.125rem;
+      line-height: 1.2;
+  }
+  .f-Title--senary {
+    font-size: 1.125rem;
+    line-height: 1.2;
+  }
+  .f-Title--secondary {
+    font-size: 2.02729rem;
+    line-height: 1.2;
+  }
+
+.f-u-weight-light {
+  font-family: Maax,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+
+.f-u-size-micro, .f-u-small {
+  font-size: .79012rem;
+}
+
+.f-Title--quaternary, .free-RichText h3 {
+  font-size: 1.60181rem;
+  line-height: 1.2;
+}
+    .f-u-size-tiny {
+        font-size: .88889rem;
+    }
+    .f-u-size-micro, .f-u-small {
+      font-size: .79012rem;
+  }
+    .f-u-color-primary1, .free-RichText a {
+        color: #07965f;
+    }
+
+    .f-label {
+      font-size: .88889rem;
+      line-height: 1.3;
+      float: none;
+      width: auto;
+      color: #333;
+      text-align: left;
+      display: block;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .f-Paragraph--withoutMargin {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+     .free-RichText,
+     .f-Paragraph {
+       word-break: break-word;
+     }
+     .f-u-strong, .f-u-weight-bold, .free-RichText b, .free-RichText strong {
+       font-family: Maax,Helvetica,Arial,sans-serif;
+       font-weight: 600;
+       letter-spacing: .01rem;
+     }
+     .f-Title, .free-RichText h2, .free-RichText h3, .free-RichText h4 {
+      font-family: Maax,Helvetica,Arial,sans-serif;
+      font-weight: 600;
+      letter-spacing: .01rem;
+  }
+     .f-u-color-font1 {
+       color: #222;
+     }
+     .f-u-style-italic, .f-u-style-italic a, .free-RichText em, .free-RichText i {
+         font-style: italic;
+     }
+     .f-u-size-default {
+       font-size: 1rem;
+    }
+    .f-Paragraph {
+     font-size: .88889rem;
+     line-height: 1.6;
+   }
+   .f-RadioButton {
+    font-family: Maax,Helvetica,Arial,sans-serif;
+    line-height: 1.5rem;
+   }
+   .f-Paragraph, .f-u-weight-light ,.free-RichText, .free-RichText p {
+       font-family: Maax,Helvetica,Arial,sans-serif;
+       font-weight: 400;
+   }
+   .f-Paragraph--primary, .free-RichText, .free-RichText p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+   .f-RadioButton {
+    display: block;
+    margin-left: 1.625rem;
+    font-weight: 400;
+    font-size: .79012rem;
+}
+
+.f-Side {
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-basis: 33.33333%;
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  display: -webkit-flex;
+  display: flex;
+  border-left: .625rem solid #fff;
+  padding-left: 0;
+  padding-right: .625rem;
+}
+
+.f-StyledTitleContainer {
+  line-height: 1;
+    margin-top: 0.625rem;
+    flex: 1 1 0%;
+    padding: 0px;
+}
+
+.f-Side-asideContent {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1;
+  flex: 1;
+  border-left: 1px solid #eee;
+  background-color: #fbfbfb;
+}
+
+.f-Grid {
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.free-center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  min-height: 80px;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+}
+
+.free- {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  text-decoration: none;
+  color: #19b4fa !important;
+  line-height: 1.3;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+}
+  
+.arrow-left {
+  font-size: 10px;
+  padding: 5px;
+}
+
+.form-button {
+  margin-top: 1rem;
+  button {
+      text-transform: none;
+      font-weight: 600;
+      height: 2.2rem;
+      width: 8rem;
+      padding: 0px;
+      
+  }
+}
+
+
+.horizontal-stroke {
+  display: block;
+  width: 8.125rem;
+  height: 0.25rem;
+  border-style: solid;
+  border-width: initial;
+  border-color: initial;
+  border-image: initial;
+  background: rgb(34, 34, 34);
+}
+
+.horizontal-stroke-large {
+display: block;
+border-style: solid;
+border-color: #000;
+}
+
+
+     // Add a black background color to the top navigation 
+     .topnav {
+        position: relative;
+        background-color: white;
+        overflow: hidden;
+        font-size: 15px;
+        padding-left: 35px;
+        padding-right: 35px;
+        border-bottom: 2px solid #14ac71;
+       }
+       
+       // Style the links inside the navigation bar 
+       .topnav a, .topnav i {
+         float: left;
+         color: #343a3f;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         font-weight: 500;
+       }
+       
+       // Change the color of links on hover 
+       .topnav a:hover , .topnav i:hover {
+         color: #07965f;
+         text-decoration: none;
+       }
+       
+       // Add a color to the active/current link 
+       .topnav a.active, .topnav i.active {
+         background-color: #14ac71;
+         color: white;
+       }
+       
+       // Centered section inside the top navigation 
+       .topnav-centered a , .topnav-centered i{
+         float: none;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+       
+       // Right-aligned section inside the top navigation 
+       .topnav-right {
+         float: right;
+       }
+       
+      
+     
+     /************ End NavBar **********************/
+
+
+    /******** FreeStarter custumization *******/
+
+  .container02 {
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      max-width: 90rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+  }
+
+    .marger-static {
+      margin: 0px 0px 0.9375rem;
+    }
+    .marger-static2 {
+      margin: 0px 0px 2.9375rem;
+    }
+
+    .button {
+      border: 0px !important;
+    }
+
+    .buttonStyle {
+      color: #FFF !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      display: inline-flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      position: relative;
+      font-family: Maax, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      background: #14ac71;
+      line-height: 1.3;
+      outline: none;
+      cursor: pointer;
+      padding: 25px;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      transition: background-color 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
+      }
+
+      .buttonStyle:hover {
+        color: #fff !important;
+        background: #07965f;
+       // transition: all 0.4s ease 0s;
+        }
+
+      
+      .f-Stepper-list {
+          justify-content: center;
+          margin: 0;
+          padding: .9375rem 0;
+          font-weight: 500;
+          font-size: .88889rem;
+          line-height: 1.3;
+      }
+      
+      .f-Row-content {
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        max-width: 1440px;
+        padding-left: 14rem;
+        padding-right: 14rem;
+      }
+
+.tiny-text-marger {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    padding-left: 1.25rem;
+}
+
+

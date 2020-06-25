@@ -1,0 +1,188 @@
+<nz-layout>
+    <app-menu-bar></app-menu-bar>
+    <nz-content class="bg-white">
+        <nz-affix class="marger-bottom">
+            <div class="marger-bottom">
+                    <div style="background-color:#f3fbff;">
+                        <div class="container02">
+                            <div class="f-Grid free-center"  data-radium="true">
+                                    <div class="col-3 text-center" (click)="goToProject()">
+                                        <a class="free- f-u-color-primary1 f-u-size-tiny f-u-weight-regular" data-radium="true">
+                                            Passer cette étape pour le moment
+                                            <i nz-icon class="arrow-left" nzType="right" nzTheme="outline"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <span class="f-u-color-font1 f-u-weight-regular">
+                                            {{ project.title }}
+                                        </span>
+                                    </div>
+                                    <div class="col-3 text-center" style="padding-left: 8%;">
+                                        <div class="form-button">
+                                            <button [routerLink]="['/view', project.id]" class="buttonStyle button"> Aperçu </button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            </div> 
+        </nz-affix>
+
+    <section nz-row  class="pt-5">
+        <div class="container01">
+            <div class="row pt-3" style="padding-left: 40px; padding-right: 40px;">
+                <div class="col-lg-7">
+                    <div class="marger-static2" style="text-align: initial">
+                        <div  class="">
+                            <h3 nz-title class="bigTitleStyle">
+                                Présentation du projet
+                            </h3>
+                            <div class="f-Grid col-12" style="padding: 0px;">
+                                <div class="marger-static2">
+                                    
+                                </div>
+                                <div class="col-10" style="padding: 0px;">
+                                    <form>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="Localisation">
+                                                        Localisation du projet (recommandé)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="localisation" [(ngModel)]="projectDetails.localisation" nz-input placeholder="Ajoutez l’endroit où se trouve le projet" nzSize="large" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="upload">
+                                                        Image de présentation (recommandé)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">
+                                                <input type="file" name="file" id="file" (change)="handleUpload($event)" class="upload" />
+                                                <label for="file">Choisir une image</label>
+                                                <br/>
+                                                <strong  *ngIf="imageName; else imageError"> {{ imageName }} </strong>
+                                                  
+                                                <ng-template #imageError>
+                                                    <strong style="color: red;"> 
+                                                        Format exiger JPEG | JPG | PNG
+                                                    </strong>
+                                                </ng-template>
+                                                
+                                            </div>
+                                            <div class="marger-static">
+                                                <p class="f-Paragraph f-Paragraph--quaternary f-Paragraph--withoutMargin">
+                                                    Taille max : 5 Mo au format JPEG ou PNG .
+                                                    Dimensions recommandées : 1200×730 px.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="Video">
+                                                        Vidéo (recommandé)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="video" [(ngModel)]="projectDetails.video" nz-input placeholder="Lien de la vidéo... Eg: youtube.com/watch?v=Jv3ctFE" nzSize="large" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="gender-ms">
+                                                        Courte Description
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <textarea class="text-input4" name="slogan" [(ngModel)]="projectDetails.slogan" rows="4" nz-input  placeholder="Soutenez la création de..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="description">
+                                                        Description détaillée du projet
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <ckeditor [editor]="Editor" name="description" [(ngModel)]="projectDetails.description"   (ready)="onReady($event)"></ckeditor>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                                <div class="marger-static">
+                                                    <div style="line-height: 1;">
+                                                        <label class="f-label" for="description">
+                                                            À quoi servira la collecte ?
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="marger-static">                                                
+                                                    <div style="-webkit-font-smoothing: antialiased;">
+                                                        <ckeditor [editor]="Editor" name="target" [(ngModel)]="projectDetails.target"  (ready)="onReady($event)"></ckeditor>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="tabs-btn">
+                                            <ul  class="mb-3">
+                                                <li class="buttonStyle-default">
+                                                    <a>Retour </a>
+                                                </li>
+                                                <li (click)="updateProjectDetail()" class="buttonStyle2">
+                                                    <a>Continuer</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div> 
+                <div class=" offset-lg-1 col-lg-4 can-hidden-lg f-Side">
+                    <div class=" f-Side-asideContent" style="padding: 2em;">
+                        <a class="preview">
+                            <div class="preview-content">
+                                <div class="image-content">
+                                        <svg width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g transform="translate(6)"><path fill="#fff" d="M0 0h16l8 8v26H0z"></path><path stroke="#333" d="M.5.5v33h23V8.207L15.793.5H.5z"></path></g><path fill="#333" d="M9 3h9v2H9zm0 7h16v2H9zm0 4h10v2H9zm0 4h13v2H9zm0 4h5v2H9zm11 7h7v2h-7zm3-3h4v2h-4z"></path><g transform="translate(6)"><path fill="#fbfbfb" d="M16 0l8 8h-8z"></path><path stroke="#333" d="M16.5 1.207V7.5h6.293L16.5 1.207z"></path></g><g transform="translate(6)"><path fill="#fff" d="M0 0h16l8 8v26H0z"></path><path stroke="#333" d="M.5.5v33h23V8.207L15.793.5H.5z"></path></g><path fill="#333" d="M9 14h10v2H9zm0 4h13v2H9zm0 4h5v2H9zM9 3h9v2H9zm0 7h16v2H9zm11 19h7v2h-7zm3-3h4v2h-4z"></path><g transform="translate(6)"><path fill="#fbfbfb" id="d" d="M16 0l8 8h-8z"></path><path fill="#fbfbfb" d="M16 0l8 8h-8z"></path><path stroke="#333" d="M16.5 1.207V7.5h6.293L16.5 1.207z"></path></g><g><g transform="translate(0 27)"><circle fill="#68ffa0" cx="6.5" cy="6.5" r="6.5"></circle><circle stroke="#333" cx="6.5" cy="6.5" r="6"></circle></g><g fill="#333"><path d="M6.5 31.379l.707.707-2.121 2.121-.707-.707z"></path><path d="M6.5 31.379L8.621 33.5l-.707.707-2.121-2.121z"></path></g></g></g></svg>
+                                </div> 
+                                <div class="tiny-text-marger">
+                                        <span style="line-height:1" class="f-u-color-font1 f-u-size-default f-u-weight-regular">Votre page</span>
+                                </div>  
+                                <span style="line-height:1.3" class="f-u-color-font1 f-u-size-tiny f-u-weight-light">Voir un aperçu de votre page de collecte.</span>
+                                <div class="text-content">
+                                        
+                                </div> 
+                            </div> 
+                        </a> 
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </nz-content>
+    
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>
+

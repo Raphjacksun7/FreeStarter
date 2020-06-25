@@ -1,0 +1,87 @@
+
+<nz-layout>
+    <nz-content>
+      <main role="main">
+        <div class="marger-static2"></div>
+        <div id="main_content">
+            <div class="py3 py10-sm px3">
+                <div class="user-account-form">
+                    <div class="rounded-content-frame rounded-content-frame--white">
+                        <div class="rounded-content-frame__content px5 current" id="login">
+                            <div class="marger-static">
+                                <h3 class="">Connexion</h3>
+                            </div>
+                            <div class="marger-static2">
+                                <span class="horizontal-stroke" style="width: 100%;"></span>
+                            </div>
+                            <form class="form-simple">               
+                                <fieldset class="mb2">
+                                    <ol>
+                                        <li class="mb3 new-form">
+                                            <div class="marger-static">
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" nz-input name="email" [(ngModel)]="credentials.email" placeholder="Email" nzSize="large" />
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mb3 relative new-form">
+                                            <div class="relative">
+                                                <div class="marger-static">
+                                                    <div style="-webkit-font-smoothing: antialiased;">
+                                                        <input class="text-input" nz-input name="password" type="password" [(ngModel)]="credentials.password" placeholder="Password"  nzSize="large" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="forgot-password-link remote_modal_dialog link_to_forgot-password-dialog f5 tipsy_s" data-modal-theme="tall" data-modal-title="Forgot your password?" href="" original-title="">
+                                                Mot de passe oublié ?
+                                            </a>
+                                        </li>
+                                        <li class="clearfix">
+                                            <button type="submit" (click)="login()" class="buttonStyle button"> Continuer </button>
+                                            <div class="pt2">
+                                                <label nz-checkbox >Se sourvenir de moi</label>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </fieldset>
+                            </form>
+                            <div class="text-strikethru">
+                                <div class="line"></div>
+                                <div class="text">ou</div>
+                            </div>
+                            <div class="mb2">
+                                <button class="buttonStyle button facebook"> 
+                                    <i nz-icon nzType="facebook" nzTheme="outline"></i> 
+                                    Continuer avec Facebook 
+                                </button>
+                            </div>
+                            <div class="f6 dark-grey-500">
+                                <span> Pas de publication sans votre accord.  </span>
+                            </div>                
+                        </div>
+                        <div class="rounded-content-frame__footer">
+                            Nouveau sur la plateforme ?
+                            <a class="js-switch-to-signup" href="/signup">S'inscrire</a>
+                        </div>
+                        <hr class="px5">
+                        <div class="mb2 f6 dark-grey-400 px5">
+                            This site is protected by reCAPTCHA and the Google 
+                            <a class="link-cobalt-500" href="https://policies.google.com/privacy">Privacy Policy</a> 
+                                and 
+                            <a class="link-cobalt-500" href="https://policies.google.com/terms">Terms of Service</a> 
+                                apply.
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+      </main>
+
+    </nz-content>  
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>
+  

@@ -1,0 +1,26 @@
+<nz-spin [nzSpinning]="loading">
+    <nz-page-header class="marger-static2" (nzBack)="onBack()" nzBackIcon nzTitle="{{user.name}}" nzSubtitle="Inscrire le {{user.created_at}} ">
+        <nz-page-header-extra>
+            <button class="button-danger" (click)="showDeleteConfirm()" nz-button>Supprimer ce utilisateur</button>
+        </nz-page-header-extra>
+      </nz-page-header>
+      <nz-descriptions class="marger-static2" nzTitle="Statistque du compte" nzBordered nzLayout="vertical">
+        <nz-descriptions-item nzTitle="Nombre de projets" [nzSpan]="2">{{nbr_projects}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Nombre de contributions" [nzSpan]="2">{{nbr_contrb}}</nz-descriptions-item>
+      </nz-descriptions>
+
+      <nz-table #basicTable nzTitle="La liste des projets de {{user.name}}" [nzData]="projects">
+        <thead>
+          <tr>
+            <th>Nom du Projet</th>
+            <th>Catégorie</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td><a  [routerLink]="['/admin/project-in-progress', project.id]">{{ project.title }}</a></td>
+            <td><strong>{{ project.category }}</strong></td>
+          </tr>
+        </tbody>
+      </nz-table>
+</nz-spin>

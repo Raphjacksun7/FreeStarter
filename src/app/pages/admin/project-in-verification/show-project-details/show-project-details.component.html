@@ -1,0 +1,82 @@
+<nz-spin [nzSpinning]="loading">
+  <nz-page-header class="marger-static2" (nzBack)="onBack()" nzBackIcon nzTitle="{{details.project.title}}" nzSubtitle="Par {{details.users.name}}, créer le {{details.project.created_at}} ">
+    <nz-page-header-extra>
+        <button class="button-success" (click)="validateProject()" nz-button>Valider ce projet</button>
+        <button class="button-success" (click)="showDeleteConfirm()" nz-button>Écrire à {{details.users.name}}</button>
+        <button class="button-danger" (click)="showDeleteConfirm()" nz-button>Supprimer ce projet</button>
+    </nz-page-header-extra>
+  </nz-page-header>
+  <nz-descriptions class="marger-static2" nzTitle="" nzBordered nzLayout="vertical">
+      <nz-descriptions-item nzTitle="Catégorie du Projet">{{details.project.category}}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Statut de la campagne">
+          <nz-badge nzStatus="error" nzText="Invalide"></nz-badge>
+      </nz-descriptions-item>
+      <nz-descriptions-item nzTitle="La durée de la campagne ">{{details.project.duration}} jours</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Montant à encaisser" [nzSpan]="1">{{details.project.budget}} francs CFA</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="La courte description du Projet " [nzSpan]="3">
+        {{details.project_details.slogan}}
+      </nz-descriptions-item>
+    </nz-descriptions>
+  
+    <div class="container01">
+      <div class="marger-static2 text-center">
+        <button  *ngIf="details.project_details.image == null" nz-button disabled>
+          <i nz-icon nzType="eye-invisible" nzTheme="outline"></i>
+          <span>Image du projet non disponible</span>
+        </button>
+        <button *ngIf="details.project_details.image != null" class="buttonStyle2" nz-button (click)="showModal()">
+          <i nz-icon nzType="eye" nzTheme="outline"></i>
+          <span>Image représentatif du projet</span>
+        </button>
+        <nz-modal [(nzVisible)]="isVisible" nzOkText="Retour" nzCancel="null" nzClosable="false" (nzOnOk)="handleOk()">
+          <img src="{{image}}" alt="Image représentatif" width="100%">
+        </nz-modal>
+      </div>
+  
+      <div class="marger-static">
+        <label *ngIf="details.project_details.video != null" class="f-label">Lien de la vidéo: <a href=""></a> </label>
+        <label *ngIf="details.project_details.video == null" class="f-label red">Lien de la vidéo disponible</label>
+      </div>
+  
+      <div *ngIf="details.project_details.description != null"class="marger-static">
+        <label class="f-label">Description détailler du Projet :</label>
+        <div class="marger-static2" [innerHTML]="details.project_details.description"></div>
+      </div>
+
+      <div *ngIf="details.project_details.description == null" class="marger-static">
+        <label class="f-label red">Description détailler du Projet non disponible</label>
+        <nz-skeleton></nz-skeleton>
+      </div>
+    
+      <div *ngIf="details.project_details.target != null" class="marger-static">
+        <label class="f-label">À quoi la collecte du porteur de projet :</label>
+        <div class="marger-static2" [innerHTML]="details.project_details.target"></div>
+      </div>
+
+      <div *ngIf="details.project_details.target == null" class="marger-static">
+        <label class="f-label red">L'objectif de la collecte non disponible </label>
+        <nz-skeleton></nz-skeleton>
+      </div>
+    
+      <div class="marger-static2">
+        <label *ngIf="details.bank_statuses.statusProof != null" class="f-label">Les informations sur la personne ou l'entité exécutant le projet sont disponibles, <a href="">telecharger maintenant!</a></label> 
+        <label *ngIf="details.bank_statuses.statusProof == null" class="f-label red">Les informations sur la personne ou l'entité exécutant le projet sont non disponibles.</label> 
+      </div>
+    
+      <div class="marger-static2 container01" *ngIf="details.bank_statuses.RIB != null">
+        <nz-descriptions nzTitle='Informations bancaire sur le projet "{{ details.project.title }}":' nzLayout="vertical">
+          <nz-descriptions-item nzTitle="Nom de la Banque">{{details.bank_statuses.nameOfBank}}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Intituler du compte">{{details.bank_statuses.realFirstName}}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="N° de compte">{{details.bank_statuses.bankAccountNumber}}</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="RIB ou SWIFT">{{details.bank_statuses.RIB}}</nz-descriptions-item>
+        </nz-descriptions>
+      </div>
+      <div class="marger-static2 container01" *ngIf="details.bank_statuses.RIB == null">
+        <label class="f-label red"> Informations bancaire sur le projet "{{ details.project.title }}" non disponible </label>
+        <nz-skeleton></nz-skeleton>
+      </div>
+    </div> 
+</nz-spin>  
+   
+  
+   

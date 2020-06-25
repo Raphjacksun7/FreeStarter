@@ -1,0 +1,18 @@
+<nz-table #basicTable [nzData]="projects">
+    <thead>
+      <tr>
+        <th>Nom du Projet</th>
+        <th>Catégorie</th>
+        <th>Montant à encaisser</th>
+        <th>Auteur</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td><a [routerLink]="['/admin/project-in-verification/', project.id]">{{ project.title }}</a></td>
+        <td><strong>{{ project.category }}</strong></td>
+        <td><strong style="color: limegreen;">{{ project.budget }} Francs CFA</strong></td>
+        <td><a [routerLink]="list-projects/project.id">{{ project.owner }}</a></td>
+      </tr>
+    </tbody>
+  </nz-table>

@@ -1,0 +1,30 @@
+<div *ngIf="projects?.length == 0" class="no-project-found">
+    <img src="https://s3-eu-west-1.amazonaws.com/com.ulule.assets/site/build/img/home/illu-rocket.50f7f1a6bc2a.png" srcset="https://s3-eu-west-1.amazonaws.com/com.ulule.assets/site/build/img/home/illu-rocket@2x.4385a779afbb.png 2x, https://s3-eu-west-1.amazonaws.com/com.ulule.assets/site/build/img/home/illu-rocket@3x.f37d06601708.png 3x">
+      <p>Aucun projets de Raphael pour le moment</p>
+      <a href="/discover" class="sc-fzpans sc-fznyAO ciltxw">
+        Découvrez autres projets
+      </a>
+</div>
+
+<nz-table *ngIf="projects?.length > 0" #basicTable [nzData]="projects">
+  <thead>
+    <tr>
+      <th>Nom du Projet</th>
+      <th>Catégorie</th>
+      <th>Action</th>
+      <th>Voir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{ project.title }}</td>
+      <td>{{ project.category }}</td>
+      <td><a style="color: #ff184a;" [routerLink]="projects/project.id">Supprimer</a></td>
+      <td>
+        <a [routerLink]="['/project/', project.id]">
+          <i nz-icon nzType="eye" nzTheme="outline"></i>
+        </a>
+    </td>
+    </tr>
+  </tbody>
+</nz-table>

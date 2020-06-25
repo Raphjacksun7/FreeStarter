@@ -1,0 +1,236 @@
+:host ::ng-deep {
+    @media screen and (min-width: 1000px)
+    {.is-hidden-lg {
+        display: none; 
+    } } 
+
+    @media screen and (max-width: 1000px)
+    {.can-hidden-lg {
+        display: none; 
+    } } 
+
+    @media screen and (min-width: 640px)
+    {.disposition {
+        margin-left: 40px;
+        margin-right: 40px;
+    } } 
+
+}
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    p {
+        line-height: 1.618;
+    }
+    ul {
+        display: block;
+        list-style-type: none;
+        -webkit-margin-after: 1em;
+        margin-block-end: 1em;
+        margin-bottom: 0rem;
+        -webkit-margin-start: 0px;
+        margin-inline-start: 0px;
+        -webkit-margin-end: 0px;
+        margin-inline-end: 0px;
+        li{
+            padding-bottom: 5px;
+        }
+
+    }
+
+    
+    
+    .horizontal-stroke-large {
+        display: block;
+        border: 2px solid;
+        border-color: #000;
+    }
+
+    .nav-container {
+        background: none repeat scroll 0 0 #ffffff;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 0 1px silver;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding-right: 8%;
+    padding-left: 8%;
+    }
+
+    .error-wrapper {
+        background: #e43d34;
+        box-sizing: border-box;
+        color: #fafafa;
+        line-height: 1.5;
+        min-height: 60px;
+        position: relative;
+        padding: 3% 10% 3% 10%;
+        z-index: 5;
+        font-size: initial;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    .error-wrapper .error-close {
+        display: block;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        width: 45px;
+        color: #fff;
+    }
+
+    .error-wrapper .error-close i {
+        font-size: 20px;
+        position: relative;
+        top: 20px;
+    }
+
+    .error-wrapper .warning {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 10%;
+    }
+
+    .error-wrapper .warning i {
+        font-size: 32px;
+        line-height: 60px;
+        margin-left: 5px;
+    }
+
+    .error-wrapper .errorlist {
+        list-style: none;
+    }
+
+    
+    .trash-button {
+        display: inline-flex;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        font-family: Maax, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        line-height: 1.3;
+        cursor: pointer;
+        font-size: 0.875rem;
+        min-width: initial;
+        min-height: initial;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: rgb(34, 34, 34);
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        outline: none;
+        padding: 0px;
+        border-width: 0.125rem;
+        border-style: solid;
+        border-color: rgb(34, 34, 34);
+        border-image: initial;
+        transition: background-color 0.2s ease 0s, color 0.2s ease 0s, border-color 0.2s ease 0s;
+      }
+
+    .disposition {
+        margin-left: 20px;
+        margin-right: 20px;
+        max-width: 500px;
+    }
+
+    .dispo {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        background-color: #ffffff;
+    }
+
+    .form-button {
+        margin-top: 1rem;
+        button {
+            text-transform: none;
+            font-weight: 600;
+            height: 2.2rem;
+            width: 8rem;
+            padding: 0px;
+            
+        }
+    }
+
+    nz-modal ::ng-deep .ant-input-group-addon:first-child {
+        border: 1px solid;
+        border-color: #14ac71;
+        border-radius: 0px;
+        font-weight: bold;
+    }
+
+    nz-modal ::ng-deep .ant-input-group-addon {
+        background-color: #14ac71;
+        color: #fff;
+    }
+
+    nz-modal ::ng-deep  .ant-input-group .ant-input {
+        float: left;
+        margin-bottom: 0;
+        text-align: inherit;
+        font-size: 0.888889rem;
+        line-height: 1.3;
+        font-family: Maax, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        box-sizing: border-box;
+        width: 100%;
+        height: 3.125rem;
+        background-color: rgb(255, 255, 255);
+        color: rgb(34, 34, 34);
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0px;
+        padding: 0.625rem 0.9375rem;
+        border-color: #14ac71;
+        outline: none;
+        overflow: hidden;
+    }
+
+    nz-modal .ant-btn:hover, .ant-btn:focus {
+        color: #0aa96a;
+        background-color: #fff;
+        border-color: #0aa96a;
+    }
+
+    nz-modal ::ng-deep  .ant-btn , nz-modal ::ng-deep  .ant-modal-header , nz-modal ::ng-deep  .ant-modal-content , nz-modal ::ng-deep  .ant-modal-footer {
+        border-radius: 0px;
+    }
+
+    nz-modal ::ng-deep .ant-btn:hover, .ant-btn:focus {
+        color: #0aa96a;
+        background-color: #fff;
+        border-color: #0aa96a;
+    }
+
+    nz-modal ::ng-deep  .ant-btn-primary {
+        color: #fff;
+        background-color: #0aa96a;
+        border-color: #0aa96a;
+    }
+
+    nz-modal ::ng-deep  .ant-btn-primary:hover, .ant-btn-primary:focus {
+        color: #fff;
+        background-color: #067d4e;
+        border-color: #067d4e;
+    }

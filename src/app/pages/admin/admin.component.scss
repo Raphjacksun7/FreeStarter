@@ -1,0 +1,36 @@
+:host ::ng-deep .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    background-color: #28a745;
+}
+
+.logo {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+nz-layout {
+background: #fff;
+}
+
+nz-header {
+background: #fff;
+padding: 0;
+line-height: 34px;
+}
+
+nz-content {
+margin: 26px;
+}
+
+
+.inner-content {
+padding: 24px;
+background: #fff;
+min-height: 360px;
+}
+
+nz-footer {
+text-align: center;
+}

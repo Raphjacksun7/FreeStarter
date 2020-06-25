@@ -1,0 +1,51 @@
+.no-project-found {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px; 
+
+      img {
+        border-style: none;
+        display: block;
+        margin: 0 auto;
+      }
+      p {
+        line-height: 1.618;
+        line-height: 1.618;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      a {
+        box-sizing: border-box;
+        width: auto;
+        height: 50px;
+        display: -webkit-inline-box;
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        font-family: sofia-pro, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        color: #14ac71;
+        background-color: white;
+        -webkit-box-flex: 0;
+        flex: 0 0 auto;
+        padding: 0px 16px;
+        border-radius: 2px;
+        -webkit-transition: all 200ms ease-in-out 0s;
+        transition: all 200ms ease-in-out 0s;
+        border-width: 2px;
+        border-style: solid;
+        -webkit-border-image: initial;
+        -o-border-image: initial;
+        border-image: initial;
+        border-color: #14ac71;
+      }
+  }

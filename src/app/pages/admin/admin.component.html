@@ -1,0 +1,53 @@
+<nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="250px">
+      <div class="logo">KONDOKPOR Admin Panel</div>
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        <li nz-menu-item routerLink="dashboard" ><i nz-icon nzType="dashboard"></i> Tableau de bord</li>
+        <li nz-submenu nzTitle="Projets" nzIcon="user">
+          <ul>
+            <li nz-menu-item routerLink="project-in-progress">Projets en cours</li>
+            <li nz-menu-item routerLink="project-in-verification">Projets en vérification</li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="Utilisateurs " nzIcon="user">
+          <ul>
+            <li nz-menu-item routerLink="user-list">Liste des inscrires</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <div class="topnav text-center">
+            <!-- Centered link -->
+            <div class="topnav-centered">
+              <a href="/" class="active">KONDOKPOR</a>
+            </div>
+            
+            <!-- Left-aligned links (default) -->
+            <a href="">Menu à mettre</a>
+            
+            <!-- Right-aligned links -->
+            <div class="topnav-right">
+              <a href="">Recherche des projets</a>
+              <a nz-dropdown [nzDropdownMenu]="menu">
+                Admin
+              </a>
+              <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul style="width: 10rem;" nz-menu nzSelectable>
+                  <li nz-menu-item>Mon Compte</li>
+                  <li nz-menu-item>Paramètre</li>
+                  <li nz-menu-item>Déconnexion</li>
+                </ul>
+              </nz-dropdown-menu>
+            </div>  
+        </div>
+      </nz-header>
+      <nz-content>
+        <router-outlet></router-outlet>
+      </nz-content>
+      <nz-footer>
+        <app-footer></app-footer>
+      </nz-footer>
+    </nz-layout>
+  </nz-layout>

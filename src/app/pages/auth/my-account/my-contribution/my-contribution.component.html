@@ -1,0 +1,28 @@
+<div *ngIf="contributions?.length == 0" class="no-project-found">
+    <img src="https://s3-eu-west-1.amazonaws.com/com.ulule.assets/site/build/img/home/illu-rocket.50f7f1a6bc2a.png" srcset="https://s3-eu-west-1.amazonaws.com/com.ulule.assets/site/build/img/home/illu-rocket@2x.4385a779afbb.png 2x, https://s3-eu-west-1.amazonaws.com/com.ulule.assets/site/build/img/home/illu-rocket@3x.f37d06601708.png 3x">
+      <p>Aucune contributions de Raphael pour le moment</p>
+      <a href="/discover" class="sc-fzpans sc-fznyAO ciltxw">
+        Découvrez autres projets
+      </a>
+</div>
+
+<nz-table *ngIf="contributions?.length > 0" #basicTable [nzData]="contributions">
+  <thead>
+    <tr>
+      <th>Nom du Projet</th>
+      <th>Montant Donné</th>
+      <th>Voir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contribution of contributions">
+      <td>{{ contribution.title }}</td>
+      <td><b>{{ contribution.amount }} F CFA</b></td>
+      <td>
+        <a [routerLink]="['/projects/', contribution.id]">
+          <i nz-icon nzType="eye" nzTheme="outline"></i>
+        </a>
+    </td>
+    </tr>
+  </tbody>
+</nz-table>

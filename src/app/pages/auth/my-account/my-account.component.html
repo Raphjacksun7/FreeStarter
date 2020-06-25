@@ -1,0 +1,37 @@
+<nz-layout>
+  <nz-affix class="text-center">
+    <app-menu-bar></app-menu-bar>
+  </nz-affix>
+  
+  <nz-layout class="layout-top">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="user-info">
+            <h4>Raphael AVOCEGAMOU</h4>
+            <ul class="user-menu">
+              <li routerLink="projects">
+                <i nz-icon nzType="gold" nzTheme="outline"></i>
+                Mes Projets
+              </li>
+              <li routerLink="contributions">
+                <i nz-icon nzType="wallet" nzTheme="outline"></i>
+                Mes Contributions
+              </li>
+              <li routerLink="settings">
+                <i nz-icon nzType="setting" nzTheme="outline"></i>
+                Paramétres
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="user-main">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+  </nz-layout>
+  <nz-footer>
+    <app-footer></app-footer>
+  </nz-footer>
+</nz-layout>

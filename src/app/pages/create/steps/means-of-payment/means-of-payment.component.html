@@ -1,0 +1,239 @@
+<nz-layout>
+    <app-menu-bar></app-menu-bar>
+    <nz-content class="bg-white">
+        <nz-affix>
+            <div class="marger-bottom">
+                    <div style="background-color:#f3fbff;">
+                        <div class="container02">
+                            <div class="f-Grid free-center"  data-radium="true">
+                                    <div class="col-3 text-center" (click)="goToProject()">
+                                        <a class="free- f-u-color-primary1 f-u-size-tiny f-u-weight-regular" data-radium="true">
+                                            Passer cette étape pour le moment
+                                            <i nz-icon class="arrow-left" nzType="right" nzTheme="outline"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <span class="f-u-color-font1 f-u-weight-regular">
+                                            {{ project.title }}
+                                        </span>
+                                    </div>
+                                    <div class="col-3 text-center" style="padding-left: 8%;">
+                                        <div class="form-button">
+                                            <button [routerLink]="['/view', project.id]" class="buttonStyle button"> Aperçu </button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            </div> 
+        </nz-affix>
+    <section nz-row  class="pt-5">
+        <div class="container01">
+            <div class="row pt-3" style="padding-left: 40px; padding-right: 40px;">
+                <div class="col-lg-7">
+                    <div class="marger-static2" style="text-align: initial">
+                        <div  class="">
+                            <h3 nz-title class="bigTitleStyle">
+                                Statut et infos bancaires
+                            </h3>
+                            <div class="f-Grid col-12" style="padding: 0px;">
+                                <div class="marger-static2">
+                                        <p class="f-Paragraph f-Paragraph--primary f-Paragraph--withoutMargin">
+                                           Veuillez renseigner votre statut et  fournissez des détails supplémentaires sur vous-même et où les fonds doivent être envoyés, si votre projet est financé avec succès.
+                                        </p>  
+                                </div>
+                                <div class="col-10" style="padding: 0px;">
+                                    <form>
+                                        <!-- <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="titre">
+                                                        Confirmation e-mail
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <div class="f-RadioButton" style="margin: 0px 0px 1.3rem 0.5rem;"> 
+                                                        Confirmez l'adresse e-mail que nous devons utiliser pour la correspondance concernant ce projet.
+                                                    </div>
+                                                    <div class="tabs-btn">
+                                                        <li class="buttonDisabled">
+                                                            <a>Verifier maintenant</a>
+                                                        </li>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="titre">
+                                                        Confirmation d'identité
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <div class="f-RadioButton" style="margin: 0px 0px 1.3rem 0.5rem;"> 
+                                                        Veuillez entrer votre nom légal et vos informations, pas de surnoms ou d'abréviations.<br/>
+                                                    </div>
+                                                    <input class="text-input" name="realFirstName" [(ngModel)]="bankStatus.realFirstName" nz-input placeholder="Entrez votre prénom"/>
+
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="realLastName" [(ngModel)]="bankStatus.realLastName" nz-input placeholder="Entrez votre nom"/>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="titre">
+                                                        Bénéficiaire des fonds
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <div class="f-RadioButton" style="margin: 0px 0px 1.3rem 0.5rem;"> 
+                                                        Dites si la personne exécutant ce projet est physique ou morale. 
+                                                        <br/>
+                                                        Toutes les informations saisies ici (y compris le nom) doivent correspondre aux informations 
+                                                        associées au compte bancaire qui sera utilisé pour recevoir les fonds, si ce projet est financé avec succès.
+                                                    </div>
+                                                    <nz-radio-group class="marger-static" [(ngModel)]="bankStatus.status" name="status">
+                                                        <label (click)="isChecked()"  nz-radio nzValue="Particulier ou Entrepreneur">
+                                                            Particulier ou Entrepreneur
+                                                        </label>
+                                                        <label (click)="isChecked()"  nz-radio nzValue="Association">
+                                                            Association / Fondation / Fonds de dotation
+                                                        </label>
+                                                        <label (click)="isChecked()"  nz-radio nzValue="Société">
+                                                            Société
+                                                        </label>
+                                                        <label (click)="isChecked()"  nz-radio nzValue="PME ou Startup">
+                                                            PME ou Startup
+                                                        </label>
+                                                        <label (click)="isChecked()"  nz-radio nzValue="Collectivité Territoriale">
+                                                            Collectivité Territoriale
+                                                        </label>
+                                                    </nz-radio-group>
+                                                    <div class="marger-static">
+                                                        <div class="f-StaticTooltip" [hidden]="checkValue" style="display:block;max-width:480px">
+                                                            <div class="f-StaticTooltip-content">
+                                                                <span class="f-StaticTooltip-arrow"></span>
+                                                                Documents à fournir avant la fin de votre collecte
+                                                                <div [innerHTML]="requireShow">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="marger-static">
+                                                        <div style="line-height: 1;">
+                                                            <label class="f-label" for="titre">
+                                                                Pour la pièce jointe
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="marger-static">
+                                                        <input type="file" name="file" id="file" (change)="handleUpload($event)" class="upload" />
+                                                        <label for="file">Cliquer ici </label>
+                                                        <br/>
+                                                        <strong> {{ zipName }} </strong>
+                                                        <strong style="color:red"> {{ imageError }} </strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <div style="-webkit-font-smoothing: antialiased;">
+                                                        <h3 class="f-Title f-Title--senary">Compte en Banque</h3>
+                                                    </div>
+                                                    <div class="f-RadioButton" style="margin: 0px 0px 1.3rem 0.5rem;"> 
+                                                        Ajoutez les détails du compte bancaire qui appartient à la personne ou à l'entité 
+                                                        qui gère le projet et qui 
+                                                        reçoit les fonds (s'il est financé avec succès).
+                                                        <br/>
+                                                        Saisissez soigneusement ces informations et vérifiez-les auprès de votre 
+                                                        banque. Il ne peut pas être modifié après votre lancement et nous ne pourrons 
+                                                        peut-être pas vous aider si les fonds sont envoyés sur le mauvais compte.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <label class="f-label" for="titre">
+                                                    Le nom de votre Banque
+                                                </label>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="nameOfBank" [(ngModel)]="bankStatus.nameOfBank" nz-input placeholder="Entrez le nom de votre Banque"/>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <label class="f-label" for="titre">
+                                                    L'Intutilé du compte
+                                                </label>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="realName" [(ngModel)]="bankStatus.realName" nz-input placeholder="Entrez votre numéro de compte"/>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <label class="f-label" for="titre">
+                                                    Le numéro de compte
+                                                </label>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="bankAccountNumber" [(ngModel)]="bankStatus.bankAccountNumber" nz-input placeholder="Entrez votre numéro de compte"/>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <label class="f-label" for="titre">
+                                                    RIB
+                                                </label>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" name="RIB" [(ngModel)]="bankStatus.RIB" nz-input placeholder="Entrez votre RIB"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tabs-btn">
+                                            <ul  class="mb-3">
+                                                <li class="buttonStyle-default">
+                                                    <a>Retour </a>
+                                                </li>
+                                                <li (click)="updateProjetBankInfo()" class="buttonStyle2">
+                                                    <a>Continuer</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div> 
+                <div class=" offset-lg-1 col-lg-4 can-hidden-lg f-Side">
+                    <div class=" f-Side-asideContent" style="padding: 2em;">
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </nz-content>
+    
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>

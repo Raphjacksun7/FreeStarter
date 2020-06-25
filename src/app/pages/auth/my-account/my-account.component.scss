@@ -1,0 +1,59 @@
+body, html {
+    font-family: sofia-pro,sans-serif;
+}
+.sider-menu {
+    border-right: 0;
+  }
+
+  .inner-layout {
+    padding: 24px 24px 24px;
+  }
+
+  nz-layout{
+    background-color: white;
+  }
+
+  nz-content {
+    background: #fff;
+    padding: 24px;
+    min-height: 80%;
+  }
+
+
+.user-info {
+    padding: 1em;
+
+    h4 {
+      color: #232221;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 33px;
+      margin-bottom: 1em;
+    }
+    li {
+      color: #14ac71;
+      font-size: 14px;
+      line-height: 1.38462rem;
+      margin-bottom: 1em;
+      list-style: none;
+      cursor: pointer;
+    } 
+    i {
+      margin-left: 0.61538rem;
+      margin-right: 0.53846rem;
+      cursor: pointer;
+      position: relative;
+      bottom: 5px;
+      font-size: 16px;
+      color: #496158e3;
+      
+    }
+
+}
+
+
+.user-main {
+    border: 1px solid #dedede;
+    margin: 4em 8em 1em 1em;
+    padding: 1em;
+}

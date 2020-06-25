@@ -1,0 +1,16 @@
+<nz-table #basicTable [nzData]="users">
+    <thead>
+      <tr>
+        <th>Noms et Prénoms</th>
+        <th>Emails</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><strong> <a [routerLink]="['/admin/user-list/', user.id]">{{ user.name }}</a></strong></td>
+        <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+        <td><a style="color: #ff2058;">Supprimer ce utilisateur</a></td>
+      </tr>
+    </tbody>
+  </nz-table>

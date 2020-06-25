@@ -1,0 +1,186 @@
+<nz-layout>
+    <nz-affix class="text-center">
+      <app-menu-bar></app-menu-bar>
+    </nz-affix>
+    <nz-content>  
+        <section class="container01">
+            <div class="adapter">
+                <div class="marger-static">
+                    <h1 class="f-Title f-u-weight-bold f-Title--quaternary">Administrer mon projet</h1>
+                </div>
+                <div class="marger-static2">
+                    <span class="f-u-color-font1 f-u-size-default f-u-weight-bold">État du projet : </span>
+                    <span class="f-u-color-font1 f-u-size-default f-u-weight-light" style="color: #ff0039;">Refusé </span>
+                    <div class="form-button">
+                        <button (click)="goToEditProject()" class="buttonStyle button" style="width:20% ; "> Modifier le projet </button>
+                    </div>
+                </div>
+                <div class="marger-static">
+                    <h1 class="f-Title f-Title--senary">Pour soumettre votre projet, il faut réunir les conditions suivantes :</h1>
+                </div>
+                <div class="marger-static">
+                    <ul>
+                        <li [routerLink]="['/steps/detailed-description/', details.project.id]">Une courte description</li>
+                        <li [routerLink]="['/steps/detailed-description/', details.project.id]">Description détaillée</li>
+                        <li [routerLink]="['/steps/detailed-description/', details.project.id]">À quoi servira la collecte</li>
+                        <li [routerLink]="['/steps/project-summary/', details.project.id]">Les informations sur la personne physique ou morale</li>
+                        <li [routerLink]="['/steps/project-summary/', details.project.id]">Les informations bancaires</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white">
+            <section class="top-marge">
+                <div class="container01">
+                    <div nz-row>
+                        <div nz-col nzSpan="24" class="text-center">
+                            <h2 nz-title> {{details.project.title}} </h2>
+                            <p class="fontStyle">
+                              {{ details.project_details.slogan }}
+                            </p>
+                        </div>
+                    </div>
+                    <div nz-row nzType="flex" nzJustify="space-between" class="pt-5">
+                      <div  class="col-lg-6">
+                        <div *ngIf="videoOnFrame" [innerHtml]="videoOnFrame" class="startFrame"></div>
+                        <img *ngIf="!videoOnFrame" src="{{image}}" class="imageFrame" alt="Image representatif du Projet" >
+                      </div>
+                      <div  class="col-lg-5 offset-lg-1 pt-5">
+                        <div nz-row nzSpan="24" class="text-left">
+                          <nz-avatar [nzSize]="50" nzIcon="user" class="text-center">
+                          </nz-avatar>
+                          <strong nz-title class="px-3"> {{details.users.name}} </strong>
+                        </div>
+                      <div nz-row nzType="flex"  nzJustify="space-between" class="pt-4">
+                        <div class="col-sm-4">
+                          <strong> {{  details.project.contributors_number ? details.project.contributors_number : '0' }} </strong>
+                          <div> Contributeurs </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <strong> {{details.project.duration}} jours </strong>
+                          <div> Restants </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <strong > {{  details.project.current_budget ? details.project.current_budget : '0' }} XOF</strong>
+                          <div> Sur {{ details.project.budget }} XOF </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-between pt-3">
+                          <nz-progress class="col-sm-10" [nzPercent]="details.project.progression ? details.project.progression : '0'" nzStrokeLinecap="square" [nzShowInfo]="false"> </nz-progress>
+                          <span nz-text class="col-xs-2" style="text-align: end;"><strong>{{ details.project.progression ? details.project.progression : '0'}} %</strong></span>
+                      </div>
+                    </div>
+                    </div>
+                    <div nz-row nzType="flex" nzJustify="space-between">
+                      <div class="col-lg-6">
+                      </div>
+                        <div class="col-lg-5 offset-lg-1 pt-2">
+                         <div class="">
+                           <div>
+                             <span class="smallText">En savoir plus et partager</span>
+                          </div>
+                          <div class="col-12 pt-2">
+                            <button title="Donnez moi des news!" class="buttonAction"><i nz-icon nzType="heart"  nzTheme="fill"></i></button>
+                            <button class="buttonAction-facebook"><i nz-icon nzType="facebook" nzTheme="fill"></i></button>
+                            <button class="buttonAction-twitter"><i nz-icon nzType="twitter-square" nzTheme="fill"></i></button>
+                            <button class="buttonAction-linkedin"><i nz-icon nzType="linkedin" nzTheme="fill"></i></button>
+                          </div>
+                         </div>
+                      </div>
+                    </div>
+                </div>
+            </section>
+            <section nz-row  class="pt-5">
+                <nz-tabset class="menuStyle text-center">
+                    <nz-tab [nzTitle]="project">
+                      <ng-template #project>  Le Projet </ng-template>
+                      <div class="row pt-3" style="padding-left: 4rem; padding-right: 2rem;">
+                        <div class="col-lg-8">
+                          <div class="marger-static2" style="text-align: initial">
+                            <div  class="">
+                              <h3 nz-title class="bigTitleStyle">
+                                {{details.project.title}}
+                              </h3>
+                              <div style="margin-top: 1.25rem; margin-bottom: 2.5rem;">
+                                <span class="horizontal-stroke"></span>
+                            </div>
+                            <section class="free-RichText marger-static2">
+                              <div class="editorParagraphText" [innerHTML]="details.project_details.description">                    
+                              </div>
+                            </section>
+                            <span class="horizontal-stroke-large marger-static2"></span>
+        
+                            <h3 nz-title class="bigTitleStyle">
+                              À quoi servira la collecte
+                            </h3>
+                            <div style="margin-top: 1.25rem; margin-bottom: 2.5rem;">
+                              <span class="horizontal-stroke"></span>
+                          </div>
+                          <section class="free-RichText">
+                            <div class="editorParagraphText" [innerHTML]="details.project_details.target">                    
+                            </div>
+                          </section>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" offset-lg-1 col-lg-3">
+                            <div class="marger-static2">
+                              <div class="bodyRight">
+                                <div style="flex-grow: 9999; flex-basis: 17.1875rem; margin: 0.9375rem;">
+                                  <div class="marger-static">
+                                    <h2 class="f-u-color-font1 f-u-weight-bold"  style="text-align: initial; font-size: 1.25rem;">
+                                      Pour nous soutenir
+                                    </h2>
+                                    <div class="marger-static">
+                                      <span class="f-u-size-tiny f-u-weight-bold" style="text-align: initial;">Faite nous un dons , si vous croyez en nous </span>
+                                    </div>
+                                    <div class="marger-static">
+                                        <nz-input-group nzAddOnBefore="Fcfa">
+                                            <input type="text" nz-input />
+                                        </nz-input-group>
+                                    </div>
+                                    <div class="marger-static">
+                                      <div class="form-button">
+                                          <button  class="buttonStyle button"> Continuer </button>
+                                      </div>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+        
+                            <div id="start-contributtion" class="marger-headTitle" style="text-align: initial">
+                              <h4 nz-title class="textStyle">
+                                Choisissez votre contrepartie
+                              </h4>
+                            </div>
+                            <div id="marger-bodyRight" *ngFor="let reward of details.rewards;">
+                                <div class="bodyRight" >
+                                  <div style="flex-grow: 9999; flex-basis: 17.1875rem; margin: 0.9375rem;">
+                                    <h2 class="f-u-color-font1 f-u-weight-bold " style="text-align: initial; font-size: 1.25rem;">
+                                      Pour {{reward.amount}} Fcfa ou plus
+                                    </h2>
+                                    <p class="f-u-color-font1 f-u-size-default f-u-weight-bold marger-static" style="text-align: initial ;">
+                                      {{reward.title}}
+                                    </p>
+                                    <div class="f-Paragraph marger-static" style="color: rgb(34, 34, 34); text-align: initial ;">
+                                      <div style="border: none;box-shadow: none;" class="editorParagraphText" [innerHTML]="reward.description">
+                                      </div>  
+                                    </div>
+                                  </div>
+                                </div> 
+                            </div>
+                        </div>  
+                      </div>
+                    </nz-tab>
+                    <nz-tab [nzTitle]="contributeurs">
+                        <ng-template #contributeurs> 
+                          Contributeurs 
+                          <nz-badge [nzCount]="8" [nzStyle]="{ backgroundColor: '#19b4fa' }"></nz-badge>
+                        </ng-template>
+                    </nz-tab>
+                </nz-tabset>
+            </section>
+        </section>
+    </nz-content>  
+</nz-layout>

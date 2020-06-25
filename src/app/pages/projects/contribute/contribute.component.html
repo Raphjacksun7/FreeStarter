@@ -1,0 +1,115 @@
+<nz-layout>
+    <app-menu-bar></app-menu-bar>
+    <nz-content class="bg-white">
+      <nz-affix>
+      <div class="marger-bottom">
+            <div style="background-color:#f3fbff;">
+                <div class="container02">
+                    <div class="f-Grid free-center"  data-radium="true">
+                            <div class="col-3 text-center" (click)="goToProject()">
+                                <a class="free- f-u-color-primary1 f-u-size-tiny f-u-weight-regular" data-radium="true">
+                                    <i nz-icon class="arrow-left" nzType="left" nzTheme="outline"></i>
+                                    Retour sur la page projet
+                                </a>
+                            </div>
+                            <div class="col-6 text-center">
+                                <span class="f-u-color-font1 f-u-weight-regular">
+                                    {{ projectDetails.project.title }}
+                                </span>
+                                <span class="f-u-color-font1 f-u-size-tiny f-u-weight-light" data-radium="true" style="display: block;">
+                                    par {{ projectDetails.users.name }}
+                                </span>
+                            </div>
+                            <div class="col-3 text-center" style="padding-left: 18%;">
+                                <span class="f-u-color-font1 f-u-size-tiny f-u-weight-light">
+                                    Montant
+                                    <span style="display:block" class="f-u-weight-regular">{{ totalAmount }} CFA</span>
+                                </span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div> 
+    </nz-affix>
+    <section nz-row  class="pt-5">
+        <div class="container01">
+            <div class="row pt-3" style="padding-left: 20px; padding-right: 20px;">
+                <div class=" offset-lg-2 col-lg-8">
+                    <section *ngIf="rewards?.length > 0" class="marger-static2">
+                        <h1 class="f-Title f-Title--secondary marger-static2">Contreparties</h1>
+                        <div *ngFor="let reward of rewards; let i = index"  class="marger-static">
+                            <div style="padding-top: 1.5em; border-width: 2px; border-style: solid; border-color: rgb(238, 238, 238); height: auto;" (click)="updateAmount(reward.amount , reward.id)">
+                                <!-- <div data-radium="true" style="display: flex; flex-direction: row; justify-content: flex-end;">
+                                    <button class="trash-button" type="button" (click)="deleteRow(i)" title="cliquez pour supprimer" aria-label="cliquez pour supprimer">
+                                        <i nz-icon nzType="check" nzTheme="outline"></i>
+                                    </button>
+                                </div> -->
+                                <div class="disposition">
+                                    <div class="marger-static">
+                                        <h1 class="f-Title f-Title--quaternary f-u-style-italic">Pour {{reward.amount}} Fcfa ou plus</h1>
+                                    </div>
+                                    <div class="marger-static">
+                                        <span class="f-u-size-default f-u-weight-bold">{{reward.title}}</span>
+                                    </div>
+                                    <div class="k-Paragraph k-Paragraph--quaternary marger-static">
+                                        <div class="editorParagraphText" [innerHTML]="reward.description">
+                                        </div>
+                                    </div>
+                                    <span class="marger-static f-u-color-font1 f-u-size-tiny f-u-weight-regular" style="display: block;line-height: 1.25rem;">
+                                        Le contributeur recevra la contrepartie le :
+                                        <span class="f-u-weight-light">{{reward.shipDate}}</span>
+                                    </span>
+                                    <div class="marger-static">
+                                        <div class="form-button">
+                                            <button (click)="showModal()"  class="buttonStyle button"> Continuer </button>
+                                        </div>
+                                    </div>
+                                    <nz-modal
+                                        [(nzVisible)]="isVisible"
+                                        nzClosable=false
+                                        nzOkText= "J'ajoute"
+                                        nzCancelText="Non"
+                                        nzTitle="Personnalisé le montant de cette contrepartie"
+                                        (nzOnCancel)="handleCancel()"
+                                        (nzOnOk)="goToPayement()"
+                                        [nzOkLoading]="isOkLoading">
+                                        <div class="marger-static">
+                                            <span class="f-u-size-tiny f-u-weight-bold">Vous pouvez mettre ici le montant que vous désirez donner pour la même contrepartie</span>
+                                        </div>
+                                        <div class="marger-static">
+                                            <nz-input-group nzAddOnBefore="Fcfa">
+                                                <input type="text" nz-input [(ngModel)]="reward.amount"/>
+                                            </nz-input-group>
+                                        </div>
+                                    </nz-modal>
+                                </div>
+                            </div>
+                        </div>
+                    </section> 
+                </div> 
+                <div class=" offset-lg-2 col-lg-8">
+                    <div class="marger-static">
+                        <span class="horizontal-stroke-large"></span>
+                    </div>
+                    <!-- <div class="marger-static dispo">
+                        <span class="f-u-color-font1 f-u-weight-regular">
+                            Total 
+                            <span class="f-u-color-font1 f-u-size-tiny f-u-weight-light" style="display: block;">
+                                hors frais de port
+                            </span>
+                        </span>
+                        <span class="f-u-color-font1 f-u-weight-bold" style="font-size: 28px;">
+                            50 €
+                        </span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </nz-content>
+    
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>

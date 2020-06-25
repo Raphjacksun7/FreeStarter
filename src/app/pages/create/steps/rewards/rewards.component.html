@@ -1,0 +1,132 @@
+<nz-layout>
+    <app-menu-bar></app-menu-bar>
+    <nz-content class="bg-white">
+        <nz-affix>
+            <div class="marger-bottom">
+                    <div style="background-color:#f3fbff;">
+                        <div class="container02">
+                            <div class="f-Grid free-center"  data-radium="true">
+                                    <div class="col-3 text-center" (click)="goToProject()">
+                                        <a class="free- f-u-color-primary1 f-u-size-tiny f-u-weight-regular" data-radium="true">
+                                            Passer cette étape pour le moment
+                                            <i nz-icon class="arrow-left" nzType="right" nzTheme="outline"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <span class="f-u-color-font1 f-u-weight-regular">
+                                            {{ project.title }}
+                                        </span>
+                                    </div>
+                                    <div class="col-3 text-center" style="padding-left: 8%;">
+                                        <div class="form-button">
+                                            <button [routerLink]="['/view', project.id]" class="buttonStyle button"> Aperçu </button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            </div> 
+        </nz-affix>
+      
+    <section nz-row  class="pt-5">
+        <div class="container01">
+            <div class="row pt-3" style="padding-left: 40px; padding-right: 40px;">
+                <div class="col-lg-7">
+                    <div class="marger-static2" style="text-align: initial">
+                        <div  class="">
+                            <h3 nz-title class="bigTitleStyle">
+                                Contreparties
+                            </h3>
+                            <div class="f-Grid col-12" style="padding: 0px;">
+                                <div class="marger-static2">
+                                        <p class="f-Paragraph f-Paragraph--primary f-Paragraph--withoutMargin">
+                                            Proposez des contreparties en échange des contributions ou passez cette étape.
+                                        </p>  
+                                </div>
+                                <div class="col-10" style="padding: 0px;"> 
+                                    <div *ngFor="let reward of rewards; let i = index;">
+                                        <div class="marger-static2">
+                                            <div class="cards">
+                                                <div class="cards-header">
+                                                    <span class="f-u-size-default f-u-weight-regular">Pour  {{reward.amount}} XOF</span>
+                                                    <button type="button" (click)="deleteRow(i)" title="cliquez pour supprimer" aria-label="cliquez pour supprimer">
+                                                        <i nz-icon nzType="delete" nzTheme="outline"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="cards-body">                                                
+                                                    <div class="content">
+                                                        <h2 style="font-size:1.5rem;margin:0 0 0.9375rem 0" class="f-u-color-font1 f-u-style-italic f-u-weight-bold" data-radium="true">{{reward.title}}</h2>
+                                                        <span class="horizontal-stroke"></span>
+                                                        <div class="k-Paragraph k-Paragraph--quaternary marger-static">
+                                                            <div class="DraftEditor-editorContainer">
+                                                                <div class="editorParagraphText" [innerHTML]="reward.description">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <span class="f-u-color-font1 f-u-size-tiny f-u-weight-regular" style="display: block;line-height: 1.25rem;">
+                                                            Livraison  
+                                                            <span class="f-u-weight-light">{{reward.shipDate}}</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="cards-bottom">
+                                                    <button type="button" (click)="goToUpdateReward(reward.id)" class="buttonStyle3">Editer la contrepartie</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-container">
+                                        <div class="marger-static2" style="margin-top: 2rem;">
+                                            <a class="buttonStyle2" (click)="goToAddReward()">
+                                                Ajouter une contrepartie
+                                            </a>
+                                        </div>
+                                    </div>                                       
+                                    <div class="tabs-btn">
+                                            <ul  class="mb-3">
+                                                <li class="buttonStyle-default">
+                                                    <a>Retour </a>
+                                                </li>
+                                                <li (click)="goToBankSatus()" class="buttonStyle2">
+                                                    <a>Continuer</a>
+                                                </li>
+                                            </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div> 
+                <div class=" offset-lg-1 col-lg-4 can-hidden-lg f-Side">
+                    <div class=" f-Side-asideContent" style="padding: 2em;">
+                        <div class="f-InformationBox">
+                            <div class="f-InformationBox-container">
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Title f-Title--quaternary">Vous hésitez ?</p>
+                                </div>
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Paragraph f-Paragraph--quaternary">
+                                        Vous avez plusieurs titres en tête ? Vous ne savez pas quelle 
+                                        durée de collecte choisir ? Pas de panique !
+                                    </p>
+                                </div>
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Paragraph f-Paragraph--quaternary">
+                                        Vous pourrez modifier les infos clés de votre collecte et 
+                                        bénéficier des conseils d'un Coach par la suite.
+                                    </p>
+                                </div>
+                            </div> 
+                        </div> 
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </nz-content>
+    
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>

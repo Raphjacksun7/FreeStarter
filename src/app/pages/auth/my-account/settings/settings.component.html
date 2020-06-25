@@ -1,0 +1,64 @@
+<div class="col-10" style="padding: 0px;">
+    <h3 nz-title class="bigTitleStyle">
+        Vos informations personnelles
+    </h3>
+    <form>
+        <div class="marger-static2">
+            <div class="marger-static">
+                <div style="line-height: 1;">
+                    <label class="f-label" for="gender-ms">
+                        Nom complet
+                    </label>
+                </div>
+            </div>
+            <div class="marger-static">                                                
+                <div style="-webkit-font-smoothing: antialiased;">
+                    <input class="text-input" nz-input name="title" [(ngModel)]="project.title" placeholder="Ajoutez un titre à votre projet (80 caractères max)" nzSize="large" />
+                </div>
+            </div>
+        </div>
+        <div class="marger-static2">
+            <div class="marger-static">
+                <div style="line-height: 1;">
+                    <label class="f-label" for="gender-ms">
+                        Adresse e-mail
+                    </label>
+                </div>
+            </div>
+            <div class="marger-static">                                                
+                <div style="-webkit-font-smoothing: antialiased;">
+                    <input class="text-input3" nz-input name="duration" [(ngModel)]="project.duration" type="number" placeholder="30" nzSize="medium" />
+                </div>
+            </div>
+        </div>
+        <div class="marger-static2">
+            <div class="marger-static">
+                <div style="line-height: 1;">
+                    <label class="f-label" for="gender-ms">
+                        Mot de passe
+                    </label>
+                </div>
+            </div>
+            <div class="marger-static">                                                
+                <div style="-webkit-font-smoothing: antialiased;">
+                    <input class="text-input" nz-input name="contact" [(ngModel)]="project.contact" type="text" placeholder="+229 90 00 00 00" nzSize="large" />
+                </div>
+            </div>
+        </div>
+        <div class="tabs-btn">
+            <ul  class="mb-3">
+                <li (click)="createProject()" class="buttonStyle2">
+                    <a>Continuer</a>
+                </li>
+            </ul>
+        </div>
+        <div class="marger-static">
+            <span class="f-u-color-font1 f-u-size-micro f-u-style-italic f-u-weight-light has-kkOverrides">
+                Nous protégeons vos données personnelles. 
+            </span>
+            <a href="#" class="f-u-color-primary1 f-u-decoration-none f-u-size-micro f-u-style-italic f-u-weight-regular">
+                En savoir plus
+            </a>
+        </div>
+    </form>
+</div>

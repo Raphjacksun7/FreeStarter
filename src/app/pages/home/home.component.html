@@ -1,0 +1,103 @@
+<nz-layout>
+  <nz-affix class="text-center">
+    <app-menu-bar></app-menu-bar>
+  </nz-affix>
+  <nz-content>
+    <section class="home_banner" style="min-height:450px; background-color:#ffffff">
+      <div class="spotlight-holder py-sm">
+        <div class="container">
+          <div class="row cols-xs-space cols-sm-space cols-md-space">
+            <div class="col-12 col-md-6">
+              <h6 class="heading text-primary h6 strong-100">
+                Le Crowdfunding au Bénin
+              </h6>
+              <h2 class="heading h1 text-rblack strong-400">
+                Faire un don pour nous, c'est appartenir à <span class="colored-text"> une grande cause</span>
+              </h2>
+              <p class="lead text-rblack mt-4">
+                Une présentation de la façon la plus simple de collecter des fonds pour des d'idées de projets. <br>
+                Soutenons ensemble des initiatives positives pour faire bouger les choses.
+              </p>
+              <a routerLink="steps/campaign-details" class="btn btn-lg btn-primary">
+                Créer une campagne
+              </a>
+            </div>
+            <div class="col-12 col-md-6 fimage">
+              <img src="../../../assets/img/home_1.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="header">
+      <div class="header-text">
+        <h1>Investir autrement dans les Business locaux</h1>
+        <p>Ne vous limitez plus aux idées, il faut aussi les concrétiser !</p>
+      </div>
+    </div>
+    <section class="stats text-center mt-3">
+      <!-- <div class="container">
+        <h1 nz-title> Logo </h1>
+        <form>
+          <div class="inner-form">
+            <div class="input-field second-wrap">
+              <input id="search" type="text" placeholder="Enter Keywords">
+            </div>
+            <div class="input-field third-wrap">
+              <button class="btn-search" type="button">
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div> -->
+
+      <div class="theline">
+        <span class="sexy_line"></span>
+      </div>
+    </section>
+
+    <section class="text-center">
+      <div class="container">
+        <h2 class="title"> Projets Populaires </h2>
+          <div class="row">
+              <div [routerLink]="['/projects/', project.id]" *ngFor="let project of projects; let i = index;" class="mb-4  py-4 col-md-6 col-lg-4">
+                <div class="card-post card-post--1 carded card-small">
+                  <div class="card-post__image" [ngStyle]="{'background-image': 'url(http://127.0.0.1:8000/api/getImage/' + project.image + ')'}">
+                    <span class="card-post__category bg-dark badge badge-primary badge-pill">En cours</span>
+                    <div class="card-post__author d-flex">
+                      <a href="/profile" style="font-size: 10px;" class="card-post__author-avatar card-post__author-avatar--small f-u-color-font1 f-u-weight-regular" > {{project.owner}}</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a href="projects/{{project.id}}" class="text-fiord-blue">
+                        {{project.title}}
+                      </a>
+                    </h5>
+                    <div class="subtitle">
+                      <p class="f-u-color-font1 f-u-size-micro f-u-weight-regular">
+                        <span>- - {{project.category}}</span>
+                      </p>
+                    </div>
+                    <span class="card-text d-inline-block mb-3">
+                      {{ (project.slogan == null)? 'Cliquez pour avoir plus de détails' :( (project.slogan.length>100)? (project.slogan | slice:0:100)+'...':(project.slogan) )  }}
+                    </span>
+                    <span class="text-muted">
+                      <div *ngIf="project.progression == null">
+                        <strong>Aucune contributions</strong>
+                      </div>
+                      <nz-progress *ngIf="project.progression >= 0" [nzPercent]="project.progression" nzStrokeLinecap="square" [nzShowInfo]="true"></nz-progress>
+                      <!-- <strong>{{ project.progression }} % </strong> -->
+                    </span>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+  </nz-content>  
+  <nz-footer>
+    <app-footer></app-footer>
+  </nz-footer>
+</nz-layout>

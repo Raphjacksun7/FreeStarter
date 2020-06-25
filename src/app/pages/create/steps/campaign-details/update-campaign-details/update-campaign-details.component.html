@@ -1,0 +1,173 @@
+<nz-layout>
+    <nz-affix class="text-center">
+        <app-menu-bar></app-menu-bar>
+    </nz-affix>
+    <nz-content class="bg-white">
+    <div class="marger-bottom">
+            
+    </div>
+    <section nz-row  class="pt-5">
+        <div class="container01">
+            <div class="row pt-3" style="padding-left: 40px; padding-right: 40px;">
+                <div class="col-lg-7">
+                    <div class="marger-static2" style="text-align: initial">
+                        <div  class="">
+                            <h3 nz-title class="bigTitleStyle">
+                                Faisons connaissance
+                            </h3>
+                            <div class="f-Grid col-12" style="padding: 0px;">
+                                <div class="marger-static2">
+                                    
+                                </div>
+                                <div class="col-10" style="padding: 0px;">
+                                    <form>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="gender-ms">
+                                                        Titre
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" nz-input name="title" [(ngModel)]="project.title" placeholder="Ajoutez un titre à votre projet (80 caractères max)" nzSize="large" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="countryCode">
+                                                        Catégorie principale
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">
+                                                <select class="text-input marger-static" name="category" value="project.category" [(ngModel)]="project.category" placeholder="Choisir votre Catégorie" >
+                                                    <option label="Technologie"  value="Technologie"></option>
+                                                    <option label="Culture"  value="Culture"></option>
+                                                    <option label="Life Style"  value="Life Style"></option>
+                                                    <option label="Santé"  value="Santé"></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                                <div class="marger-static">
+                                                    <div style="line-height: 1;">
+                                                        <h3 class="f-Title f-Title--senary">Mon objectif de collecte</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="marger-static">
+                                                    <div style="-webkit-font-smoothing: antialiased;">
+                                                        <div class="f-RadioButton" style="margin: 0px 0px 1.3rem 0.5rem;"> 
+                                                            Je collecte des dons et j'offre des contreparties 
+                                                            en échange. Cet objectif me permet aussi de collecter des dons libres.
+                                                        </div>
+                                                        <div class="marger-static">                                                
+                                                            <div style="-webkit-font-smoothing: antialiased;">
+                                                                <input class="text-input" nz-input name="budget" [(ngModel)]="project.budget" type="number" placeholder="Entrez un montant" nzSize="large" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="gender-ms">
+                                                        Devise de la collecte
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <select class="text-input marger-static" >
+                                                    <option label="XOF" value="xof"></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="gender-ms">
+                                                        Durée (240 jours maximum)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input3" nz-input name="duration" [(ngModel)]="project.duration" type="number" placeholder="30" nzSize="medium" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static2">
+                                            <div class="marger-static">
+                                                <div style="line-height: 1;">
+                                                    <label class="f-label" for="gender-ms">
+                                                        Téléphone (recommandé pour faciliter les échanges avec votre coach)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="marger-static">                                                
+                                                <div style="-webkit-font-smoothing: antialiased;">
+                                                    <input class="text-input" nz-input name="contact" [(ngModel)]="project.contact" type="text" placeholder="+229 90 00 00 00" nzSize="large" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tabs-btn">
+                                            <ul  class="mb-3">
+                                                <li class="buttonStyle-default">
+                                                    <a>Retour </a>
+                                                </li>
+                                                <li (click)="updateProject()" class="buttonStyle2">
+                                                    <a>Continuer</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="marger-static">
+                                            <span class="f-u-color-font1 f-u-size-micro f-u-style-italic f-u-weight-light has-kkOverrides">
+                                                Nous protégeons vos données personnelles. 
+                                            </span>
+                                            <a href="#" class="f-u-color-primary1 f-u-decoration-none f-u-size-micro f-u-style-italic f-u-weight-regular">
+                                                En savoir plus
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div> 
+                <div class=" offset-lg-1 col-lg-4 can-hidden-lg f-Side">
+                    <div class=" f-Side-asideContent" style="padding: 2em;">
+                        <div class="f-InformationBox">
+                            <div class="f-InformationBox-container">
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Title f-Title--quaternary">Vous hésitez ?</p>
+                                </div>
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Paragraph f-Paragraph--quaternary">
+                                        Vous avez plusieurs titres en tête ? Vous ne savez pas quelle 
+                                        durée de collecte choisir ? Pas de panique !
+                                    </p>
+                                </div>
+                                <div style="margin-bottom: 0.625rem;">
+                                    <p class="f-Paragraph f-Paragraph--quaternary">
+                                        Vous pourrez modifier les infos clés de votre collecte et 
+                                        bénéficier des conseils d'un Coach par la suite.
+                                    </p>
+                                </div>
+                            </div> 
+                        </div> 
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    </nz-content>
+    
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>

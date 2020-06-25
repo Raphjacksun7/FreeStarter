@@ -1,0 +1,189 @@
+<nz-layout>
+    <app-menu-bar></app-menu-bar>
+    <nz-content class="bg-white">
+      <nz-affix>
+      <div class="marger-bottom">
+            <div style="background-color:#f3fbff;">
+                <div class="container02">
+                    <div class="f-Grid free-center"  data-radium="true">
+                            <div class="col-3 text-center" (click)="goToRewards()">
+                                <a class="free- f-u-color-primary1 f-u-size-tiny f-u-weight-regular" data-radium="true">
+                                    <i nz-icon class="arrow-left" nzType="left" nzTheme="outline"></i>
+                                    Retour à ma sélection
+                                </a>
+                            </div>
+                            <div class="col-6 text-center">
+                                <span class="f-u-color-font1 f-u-weight-regular">
+                                    {{ projectDetails.project.title }}
+                                </span>
+                                <span class="f-u-color-font1 f-u-size-tiny f-u-weight-light" data-radium="true" style="display: block;">
+                                    par {{ projectDetails.users.name }}
+                                </span>
+                            </div>
+                            <div class="col-3 text-center" style="padding-left: 18%;">
+                                <span class="f-u-color-font1 f-u-size-tiny f-u-weight-light">
+                                    Montant
+                                    <span style="display:block" class="f-u-weight-regular">{{ reward.amount }} CFA</span>
+                                </span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div> 
+    </nz-affix>
+    <section nz-row  class="pt-5">
+        <div class="container01">
+            <div class="row pt-3" style="padding-left: 20px; padding-right: 20px;">
+                <div class="col-lg-7">
+                    <div class="marger-static2" style="text-align: initial">
+                        <div  class="">
+                            <h3 nz-title class="bigTitleStyle">
+                                Paiement
+                            </h3>
+                            <div style="margin-top: 1.25rem; margin-bottom: 2.5rem;">
+                                <span class="horizontal-stroke"></span>
+                            </div>
+                            <div class="f-Grid col-12">
+                                <div class="marger-static2">
+                                    <p nz-paragraph style="margin:0" class="col-10 f-u-color-font1">
+                                        Le montant de votre contribution vous sera intégralement remboursé si la collecte n'atteint pas son objectif.  
+                                    </p>
+                                </div>
+                                <div class="col-10 marger-static">
+                                    <p style="margin:0" class="f-u-color-font1 f-u-size-default f-u-weight-regular">
+                                        Sélectionnez un type de paiement
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <form>
+                                        <div class="tabs-container">
+                                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link navStyle active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Payer par carte de crédit </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link navStyle" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Payer avec votre mobile</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="pills-tabContent">
+                                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                                    <div class="marger-static">
+                                                        <div class="marger-static">
+                                                            <div style="line-height: 1;">
+                                                                <label class="f-label" for="numberCard">
+                                                                    Numéro de carte
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="marger-static">
+                                                            <div style="-webkit-font-smoothing: antialiased;">
+                                                                <input class="text-input" nz-input placeholder="XXXX XXXX XXXX XXXX" nzSize="large" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="marger-static">
+                                                        <div class="marger-static">
+                                                            <div style="line-height: 1;">
+                                                                <label class="f-label" for="timeCard">
+                                                                    Date de fin de validité
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="marger-static">
+                                                            <div class="col-xs-12" style="-webkit-font-smoothing: antialiased;justify-content: space-between;">
+                                                                <input class="col-sm-5 text-input marger-static"  placeholder="Année" nz-input  nzSize="large" />
+                                                                <input class="col-sm-5 offset-sm-2 text-input marger-static"  placeholder="Mois" nz-input  nzSize="large" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="marger-static">
+                                                        <div class="marger-static">
+                                                            <div style="line-height: 1;">
+                                                                <label class="f-label" for="numberCardCVV">
+                                                                    Cryptogramme visuel
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="marger-static">
+                                                            <div style="-webkit-font-smoothing: antialiased;">
+                                                                <input class="text-input" nz-input placeholder="CVV" nzSize="large" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="marger-static">
+                                                        <div style="-webkit-font-smoothing: antialiased;">
+                                                            <div class="form-button">
+                                                                <button (click)="validatePayment()" class="buttonStyle button" type="submit" >Valider le paiement</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                    <div class="marger-static">
+                                                        <div class="marger-static">
+                                                            <div style="line-height: 1;">
+                                                                <label class="f-label" for="numberCard">
+                                                                    Numéro de la SIM
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="marger-static">
+                                                            <div style="-webkit-font-smoothing: antialiased;">
+                                                                <input class="text-input" nz-input placeholder="66 XXXX XX" value nzSize="large" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="marger-static">
+                                                        <div style="-webkit-font-smoothing: antialiased;">
+                                                            <div class="form-button">
+                                                                <button (click)="validatePayment()" class="buttonStyle button" type="submit" >Valider le paiement</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="marger-static">
+                                            <span class="f-u-color-font1 f-u-size-micro f-u-style-italic f-u-weight-light has-kkOverrides">
+                                                Nous protégeons vos données personnelles. 
+                                            </span>
+                                            <a href="#" class="f-u-color-primary1 f-u-decoration-none f-u-size-micro f-u-style-italic f-u-weight-regular">
+                                                En savoir plus
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div> 
+                <div class=" offset-lg-1 col-lg-4 can-hidden-lg">
+                    <div style="background-color: rgb(34, 34, 34); margin-right: -40px; padding: 5rem 2.5rem 3.75rem; color: rgb(255, 255, 255);">
+                        <div class="marger-static">
+                            <p class="f-Title">Votre sélection</p>
+                        </div>
+                        <div class="marger-static">
+                            <span class="horizontal-stroke-white"></span>
+                        </div>
+                        <div class="white-content marger-static">
+                           <div class="marger-static">
+                                <p class="f-Title f-u-style-italic">Pour {{ reward.amount }} CFA</p>
+                           </div>
+                           <div style="margin-top: 1.25rem;margin-bottom: 0rem;">
+                                <div class="f-u-color-font1 f-u-line-height-normal f-u-size-micro f-u-weight-light" style="margin: 0rem;">
+                                    <div class="editorParagraphText" [innerHTML]="reward.description"></div>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </nz-content>
+    
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>

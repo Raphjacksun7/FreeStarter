@@ -1,0 +1,142 @@
+:host ::ng-deep {
+
+    @media screen and (min-width: 1000px)
+  {.is-hidden-lg {
+      display: none; 
+  } } 
+
+
+  $break-large: 1080px;
+  @media (min-width: $break-large) {
+    .textStyle {
+      font-size: 1.89899rem;
+    }
+    .bigTitleStyle{
+      font-size: 2.7256rem;
+    }
+  }
+
+  
+ 
+}
+
+
+
+.textStyle {
+    font-size: 1.7256rem;
+    line-height: 1.2;
+}
+.bigTitleStyle{
+  font-size: 2.5256rem;
+  font-family: Maax,Helvetica,Arial,sans-serif;
+  line-height: 1.3;
+  letter-spacing: .01rem;
+}
+
+
+    .f-InformationBox {
+      display: inline-block;
+      font-family: Maax,Helvetica,Arial,sans-serif;
+      font-weight: 400;
+  }
+
+  .f-InformationBox-container {
+    padding: .625rem 1.25rem 1.25rem;
+    color: #222;
+    background-color: #fff;
+    border: .125rem solid #eee;
+}
+
+.vertical-stepper::before {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0.875rem;
+    z-index: -1;
+    content: "";
+    border-left: 2px dashed rgb(238, 238, 238);
+}
+
+.vertical-stepper {
+    position: relative;
+    padding: 1px 0px;
+}
+
+.vertical-stepper ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.vertical-stepper ul li{
+    margin: 1.875rem 0px;
+}
+
+.vertical-stepper ul li a{
+    display: inline-flex;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+}
+
+.vertical-stepper .step {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    color: rgb(34, 34, 34);
+    flex: 1 1 0%;
+    transition: transform 0.4s ease 0s;
+}
+
+.vertical-stepper .step :hover{
+    padding-left: 5px;
+    transition-duration: .7s;
+    transform-style: flat;
+}
+
+
+.vertical-stepper .step .content{
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: normal;
+    margin: 0px 0px 0.125rem;
+}
+
+.vertical-stepper .step .link{
+    line-height: 1;
+    margin: 0px;
+    padding: 0px;
+}
+
+.vertical-stepper .step .link span{
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: normal;
+    color: rgb(25, 180, 250);
+    text-decoration: none;
+    transition: color 0.4s ease 0s;
+}
+
+
+.status {
+    flex-shrink: 0;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    box-sizing: border-box;
+    margin-right: 0.9375rem;
+    font-family: Maax, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    background-color: rgb(25, 180, 250);
+    border-radius: 1.875rem;
+    border-width: 2px;
+    border-style: solid;
+    border-image: initial;
+    border-color: rgb(25, 180, 250);
+}

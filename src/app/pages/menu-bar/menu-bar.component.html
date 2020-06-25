@@ -1,0 +1,25 @@
+<div class="topnav text-center">
+    <!-- Centered link -->
+     <div class="topnav-centered">
+         <a href="/" class="active">KONDOKPOR</a>
+     </div>
+     
+     <!-- Left-aligned links (default) -->
+     <a href="steps/campaign-details">Commencer votre projet</a>
+     
+     <!-- Right-aligned links -->
+     <div class="topnav-right">
+         <a href="/discover">Explorer les projets</a>
+         <a *ngIf="auth.isLoggedIn() == false" href="/login">Se connecter</a>
+         <a *ngIf="auth.isLoggedIn() == true" href="/myaccount/projects">
+            {{fullname}}
+        </a>
+          <!-- <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul style="width: 10rem;" nz-menu nzSelectable>
+              <li routerLink="/myaccount" nz-menu-item>Mon Compte</li>
+              <li routerLink="/myaccount" nz-menu-item>Mes project</li>
+              <li (click)="logout()" nz-menu-item>Déconnexion</li>
+            </ul>
+          </nz-dropdown-menu> -->
+     </div> 
+ </div>

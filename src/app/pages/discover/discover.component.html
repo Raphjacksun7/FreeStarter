@@ -1,0 +1,78 @@
+<nz-layout>
+    <nz-affix class="text-center">
+      <app-menu-bar></app-menu-bar>
+    </nz-affix>
+    
+    <div class="row mt-5">
+      <div class="col-sm-6 offset-3">
+        <div class="wrap">
+          <div class="search">
+             <input type="text" class="searchTerm" placeholder="Taper un mot clé...">
+             <button type="submit" class="searchButton">
+               <i nz-icon nzType="search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <nz-layout class="layout-top">
+        <nz-sider nzWidth="20%" nzTheme="light">
+          <strong style="font-size: 1em;margin: 1em;"> Filter les resultats</strong>
+          <ul nz-menu nzMode="inline" class="sider-menu">
+            <li nz-submenu  nzTitle="Tous les catégories">
+              <ul>
+                <li nz-menu-item >option1</li>
+                <li nz-menu-item>option2</li>
+                <li nz-menu-item>option3</li>
+                <li nz-menu-item>option4</li>
+              </ul>
+            </li>
+            <li nz-menu-item>Projets en cours</li>
+            <li nz-menu-item>Projets financés à succes</li>
+          </ul>
+        </nz-sider>
+        <nz-layout class="inner-layout">
+          <nz-content>
+            <div class="row">
+              <div [routerLink]="['/projects/', project.id]" *ngFor="let project of projects; let i = index;" class="mb-4  py-4 col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="card-post card-post--1 carded card-small">
+                  <div class="card-post__image" [ngStyle]="{'background-image': 'url(http://127.0.0.1:8000/api/getImage/' + project.image + ')'}">
+                    <span class="card-post__category bg-dark badge badge-primary badge-pill">En cours</span>
+                    <div class="card-post__author d-flex">
+                      <a href="/profile" style="font-size: 10px;" class="card-post__author-avatar card-post__author-avatar--small f-u-color-font1 f-u-weight-regular" > {{project.owner}}</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a href="projects/{{project.id}}" class="text-fiord-blue">
+                        {{project.title}}
+                      </a>
+                    </h5>
+                    <div class="subtitle">
+                      <p class="f-u-color-font1 f-u-size-micro f-u-weight-regular">
+                        <span>- - {{project.category}}</span>
+                      </p>
+                    </div>
+                    <span class="card-text d-inline-block mb-3">
+                      {{ (project.slogan == null)? 'Cliquez pour avoir plus de détails' :( (project.slogan.length>100)? (project.slogan | slice:0:100)+'...':(project.slogan) )  }}
+                    </span>
+                    <span class="text-muted">
+                      <div *ngIf="project.progression == null">
+                        <strong>Aucune contributions</strong>
+                      </div>
+                      <nz-progress *ngIf="project.progression >= 0" [nzPercent]="project.progression" nzStrokeLinecap="square" [nzShowInfo]="true"></nz-progress>
+                      <!-- <strong>{{ project.progression }} % </strong> -->
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nz-content>
+        </nz-layout>
+      </nz-layout>
+    <nz-footer>
+      <app-footer></app-footer>
+    </nz-footer>
+  </nz-layout>
+  
