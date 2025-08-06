@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpBackend } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { User } from '../../interfaces/user-details';
@@ -12,20 +12,15 @@ import { User } from '../../interfaces/user-details';
 
 export class AuthService {
 
-  apiUrl = 'http://127.0.0.1:8000';
   errorData: {};
   redirectUrl: string;
 
 
-  
-private http: HttpClient;
-
-constructor(handler: HttpBackend) {
-    this.http = new HttpClient(handler);
-}
+  constructor(private http: HttpClient) {
+  }
 
   public login(email: string , password: string):Observable<any>  {
-    return this.http.post<any>(`${this.apiUrl}/api/login`, {email: email, password: password})
+    return this.http.post<any>(`/api/login`, {email: email, password: password})
     .pipe(map(data => {
         if (data && data.access_token) {
           localStorage.setItem('currentUser', JSON.stringify(data));
@@ -40,7 +35,7 @@ constructor(handler: HttpBackend) {
 
   public register( user: User):Observable<any> {
     console.log(user)
-    return this.http.post(`${this.apiUrl}/api/register`,user, {
+    return this.http.post(`/api/register`,user, {
       headers: {'Content-Type':'application/json'}
     }).pipe(map(() => {
       console.log("Registration successfull")
@@ -51,7 +46,7 @@ constructor(handler: HttpBackend) {
 
 
   public profile (): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/api/user`,{
+    return this.http.get<any>(`/api/user`,{
       headers: { Authorization: `Bearer ${this.getAuthorizationToken()}`}
     }).pipe(map(data => {
         if (data) {
@@ -64,13 +59,13 @@ constructor(handler: HttpBackend) {
 
 
   public getUserById (id): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/getUser/${id}`,{
+    return this.http.get(`/api/getUser/${id}`,{
       headers:  {'Content-Type':'application/json'}
     })
   }
 
   public getUsers(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/getUsers`,{
+    return this.http.get(`/api/getUsers`,{
       headers:  {'Content-Type':'application/json'}
     }).pipe(
       map(this.extractData),
@@ -79,7 +74,7 @@ constructor(handler: HttpBackend) {
 
   public getAdminByUserId (id): Observable<any> {
     console.log(this.getAuthorizationToken())
-    return this.http.get(`${this.apiUrl}/api/getUser/${id}`,{
+    return this.http.get(`/api/getUser/${id}`,{
       headers: { Authorization: `Bearer ${this.getAuthorizationToken()}`}
     })
   }
@@ -113,7 +108,7 @@ constructor(handler: HttpBackend) {
   
 
   public deleteUser(idUser) {
-    return this.http.delete(`${this.apiUrl}/api/delete/${idUser}`, {
+    return this.http.delete(`/api/delete/${idUser}`, {
       headers: {'Content-Type':'application/json'}
     }).pipe(map(this.extractData),
     catchError(this.handleError)
